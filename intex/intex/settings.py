@@ -80,20 +80,11 @@ WSGI_APPLICATION = 'intex.wsgi.application'
 
 DATABASES = {
     'default': {
-<<<<<<< HEAD
                 'ENGINE': 'django.db.backends.postgresql',
                 'NAME': 'intex',
                 'USER': 'postgres',
                 'PASSWORD': '!!ss159357',
                 'HOST': 'localhost'
-=======
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'intex',
-        'USER': 'postgres',
-        'PASSWORD': 'group5',
-        'HOST': 'localhost',
-
->>>>>>> 21debc32487962fb1896cda2e5681f5fff4dc4c0
     }
 }
 
