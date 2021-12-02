@@ -1,0 +1,162 @@
+{%extends 'base.html'%}{%load static%}{%block content%}
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+      <div class="page-title text-center">
+        <h2>Register a New <span class="primary">Prescriber</span></h2>
+        <p>Fill out the information below to register a new subscriber.</p>
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
+      <form
+        id="contact-form"
+        class="row contact-form no-gutter"
+        action="#"
+        method="post"
+      >
+        <div class="col-lg-12 col-lg-12">
+          <div class="input-field">
+            <span class="input-icon" id="subject"
+              ><i class="tf-pricetags"></i
+            ></span>
+            <input
+              type="text"
+              class="form-control"
+              name="subject"
+              placeholder="First Name"
+            />
+          </div>
+        </div>
+        <!-- ./col- -->
+        <div class="col-lg-12 col-lg-12">
+          <div class="input-field">
+            <span class="input-icon" id="subject"
+              ><i class="tf-pricetags"></i
+            ></span>
+            <input
+              type="text"
+              class="form-control"
+              name="subject"
+              placeholder="Last Name"
+            />
+          </div>
+        </div>
+        <!-- ./col- -->
+        <div class="col-lg-12 col-lg-12">
+          <div class="input-field">
+            <span class="input-icon" id="subject"
+              ><i class="tf-pricetags"></i
+            ></span>
+            <input
+              type="text"
+              class="form-control"
+              name="subject"
+              placeholder="Gender"
+            />
+          </div>
+        </div>
+        <!-- ./col- -->
+        <div class="col-lg-12 col-lg-12">
+          <div class="input-field">
+            <span class="input-icon" id="subject"
+              ><i class="tf-pricetags"></i
+            ></span>
+            <input
+              type="text"
+              class="form-control"
+              name="subject"
+              placeholder="State"
+            />
+          </div>
+        </div>
+        <!-- ./col- -->
+        <div class="col-lg-12 col-lg-12">
+          <div class="input-field">
+            <span class="input-icon" id="subject"
+              ><i class="tf-pricetags"></i
+            ></span>
+            <input
+              type="text"
+              class="form-control"
+              name="subject"
+              placeholder="Credential"
+            />
+          </div>
+        </div>
+        <!-- ./col- -->
+        <div class="col-lg-12 col-lg-12">
+          <div class="input-field">
+            <span class="input-icon" id="subject"
+              ><i class="tf-pricetags"></i
+            ></span>
+            <input
+              type="text"
+              class="form-control"
+              name="subject"
+              placeholder="Specialty"
+            />
+          </div>
+        </div>
+        <!-- ./col- -->
+        <div class="col-lg-12 col-lg-12">
+          <div class="input-field">
+            <span class="input-icon" id="subject"
+              ><i class="tf-pricetags"></i
+            ></span>
+            <select
+              type="text"
+              class="form-control"
+              name="subject"
+              placeholder="Prescribes opioids?"
+            >
+              <option value="" disabled selected>Prescribes opioids?</option>
+              <option value="True">True</option>
+              <option value="False">False</option>
+            </select>
+          </div>
+        </div>
+        <!-- ./col- -->
+        <div class="col-lg-12 col-lg-12">
+          <div class="input-field">
+            <span class="input-icon" id="subject"
+              ><i class="tf-pricetags"></i
+            ></span>
+            <input
+              type="text"
+              class="form-control"
+              name="subject"
+              placeholder="To Date Prescriptions"
+            />
+          </div>
+        </div>
+        <!-- ./col- -->
+        <div class="col-xs-12 col-sm-12">
+          <div class="input-field">
+            <span class="btn">
+              <button
+                type="submit"
+                class="btn btn-primary btn-custom-border text-uppercase"
+              >
+                Create
+              </button>
+            </span>
+          </div>
+          <div class="msg-success">Created successfully</div>
+          <div class="msg-failed">
+            Something went wrong, please try again later
+          </div>
+        </div>
+        <!-- ./col- -->
+      </form>
+      <!-- /.row -->
+    </div>
+    <!-- /.col- -->
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.container -->
+
+{%endblock%}
