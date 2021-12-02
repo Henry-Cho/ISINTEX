@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'homepage.apps.HomepageConfig',
+    'prescribers.apps.PrescribersConfig',
     'govpage.apps.GovpageConfig'
 ]
 
