@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-<<<<<<< HEAD
 class Drug(models.Model) :
     drugname = models.CharField(max_length=30, default='')
     isopioid = models.BooleanField(default=False)
@@ -11,7 +10,6 @@ class Drug(models.Model) :
     
     def __str__(self) :
         return self.drugname
-=======
 
 class Prescriber(models.Model):
     fname = models.CharField(max_length=11, blank=False)
@@ -28,4 +26,3 @@ class Prescriber(models.Model):
     
     def __str__(self):
         return (self.fname)
->>>>>>> 21debc32487962fb1896cda2e5681f5fff4dc4c0
