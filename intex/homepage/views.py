@@ -4,5 +4,3 @@ from django.shortcuts import render
 def indexPageView(request) :
     return render(request, 'homepage/index.html')
 
-def aboutPageView(request) :
-    return render(request, 'homepage/about.html')
