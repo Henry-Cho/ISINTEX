@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'homepage.apps.HomepageConfig',
     'prescribers.apps.PrescribersConfig',
+    'govpage.apps.GovpageConfig'
 ]
 
 MIDDLEWARE = [
