@@ -1,0 +1,12 @@
+{% extends 'base.html' %}{%load static%} {%block content%}
+
+<div class="container">
+  <h2>Prescriber Detail</h2>
+  <div class="sub">
+    <span>{{ pres.fname }}</span>
+    <span>{{ pres.lname }}</span>
+    <span>{{ pres.credentials }}</span>
+  </div>
+</div>
+<!-- /.container -->
+{% endblock %}
