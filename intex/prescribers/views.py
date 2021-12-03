@@ -150,17 +150,17 @@ def updateCount(req, presid):
     return render(req, 'prespage/updatecount.html', context)
 
 def updateCountNum(req):
-    if req.method == 'POST':
-        presid = req.POST['presid']
-        drugName = req.POST['drug']
+    # if req.method == 'POST':
+    #     presid = req.POST['presid']
+    #     drugName = req.POST['drug']
 
-        pres = Prescriber.objects.get(id=presid)
+    #     pres = Prescriber.objects.get(id=presid)
 
-        print(pres)
-        pres.drugName += req.POST['count']
+    #     print(pres)
+    #     pres.drugName += req.POST['count']
 
 
-        pres.save()
-        return PresDetailViewPage(req, presid)
-    else:
+    #     pres.save()
+    #     return PresDetailViewPage(req, presid)
+    # else:
         return PresViewPage(req)
