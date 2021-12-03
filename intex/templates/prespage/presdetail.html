@@ -1,0 +1,31 @@
+{% extends 'base.html' %}{%load static%} {%block content%}
+
+<div class="container">
+  <h2>
+    <span>{{ pres.fname }}</span> <span>{{ pres.lname }}</span
+    ><span>, {{ pres.credentials }}</span>
+  </h2>
+  <br />
+  <div class="sub">
+    <h3>Prescriber Details:</h3>
+    <p>Gender: {{ pres.gender }}</p>
+    <p>Location: {{ pres.state }}</p>
+    <p>Specialty: {{ pres.specialty }}</p>
+  </div>
+</div>
+<span class="btn">
+  <a href="{% url 'update' presid=pres.id%}">
+    <button class="btn btn-primary btn-custom-border text-uppercase">
+      Update
+    </button>
+  </a>
+</span>
+<span class="btn">
+  <a href="#"
+    ><button class="btn btn-primary btn-custom-border text-uppercase">
+      Delete
+    </button></a
+  >
+</span>
+<!-- /.container -->
+{% endblock %}

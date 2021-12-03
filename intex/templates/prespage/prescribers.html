@@ -1,0 +1,23 @@
+{% extends 'base.html' %}{%load static%} {%block content%}
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+      <div class="page-title text-center">
+        <h2>Prescriber<span class="primary">List</span></h2>
+      </div>
+    </div>
+  </div>
+
+  {% for d in preslist%}
+  <a href="/prescribers/{{d.id}}">
+    <div class="sub">
+      <span>{{ d.fname }}</span>
+      <span>{{ d.lname }}</span>
+      <span>{{ d.credentials }}</span>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+<!-- /.container -->
+{% endblock %}
