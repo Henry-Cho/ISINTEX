@@ -1,11 +1,28 @@
 {% extends 'base.html' %}{%load static%} {%block content%}
 
 <div class="container">
-  <h2>Prescriber Detail</h2>
+  <h2>
+    <span>{{ pres.fname }}</span> <span>{{ pres.lname }}</span
+    ><span>, {{ pres.credentials }}</span>
+  </h2>
+  <br />
   <div class="sub">
-    <span>{{ pres.fname }}</span>
-    <span>{{ pres.lname }}</span>
-    <span>{{ pres.credentials }}</span>
+    <h3>Doctor Details:</h3>
+    <p>Gender: {{ pres.gender }}</p>
+    <p>Location: {{ pres.state }}</p>
+    <p>Specialty: {{ pres.specialty }}</p>
+  </div>
+</div>
+<div class="col-xs-12 col-sm-12">
+  <div class="input-field">
+    <span class="btn">
+      <button
+        type="submit"
+        class="btn btn-primary btn-custom-border text-uppercase"
+      >
+        Update
+      </button>
+    </span>
   </div>
 </div>
 <!-- /.container -->
