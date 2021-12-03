@@ -12,7 +12,31 @@
     <p>Location: {{ pres.state }}</p>
     <p>Specialty: {{ pres.specialty }}</p>
   </div>
+
+  {% for d in drug %}
+  <p>{{ d }}</p>
+  {% endfor %}
+
+
 </div>
+<div class="btnBox">
+  <span class="btn">
+    <a href="{% url 'update' presid=pres.id%}">
+      <button class="btn btn-primary btn-custom-border text-uppercase">
+        Update
+      </button>
+    </a>
+  </span>
+  <span class="btn">
+    <a href="#"
+      ><button class="btn btn-primary btn-custom-border text-uppercase">
+        Delete
+      </button></a
+    >
+  </span>
+</div>
+<<<<<<< HEAD
+=======
 <span class="btn">
   <a href="{% url 'update' presid=pres.id%}">
     <button class="btn btn-primary btn-custom-border text-uppercase">
@@ -34,5 +58,6 @@
     </button></a
   >
 </span>
+>>>>>>> 6e9d931488a2150ca8a289c05fb5ba4420f6624c
 <!-- /.container -->
 {% endblock %}
