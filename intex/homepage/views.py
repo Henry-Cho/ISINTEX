@@ -42,17 +42,26 @@ def searchDrug(req):
     input = req.GET['search']
     input2 = req.GET.get('filter')
 
-    tf = False
+    tf = 'False'
 
-    if input != 'on' :
-        tf = True
+    if input2 == 'on' :
+        tf = 'True'
 
-    print(input2)
-    print(tf)
 
-    druglist = Drug.objects.filter(drugname__icontains=input, isopioid= tf)
+    druglist = Drug.objects.filter(drugname__icontains=input)
+    newlist = druglist.filter(isopioid = tf)
+
+    count = 0
+    for d in newlist :
+        count += 1
+    
+    obj = {
+        "count": count
+    }
+
     context = {
-        'drug': druglist
+        'drug': newlist,
+        'count': obj
     }
 
     return render(req, 'homepage/drugsearch.html', context)
