@@ -23,7 +23,8 @@ def newPresCreate(req):
         newPres.isopioidprescriber = req.POST.get("isopioidprescriber")
         newPres.totalprescriptions = req.POST.get("totalprescriptions")
         newPres.save()
-        return PresDetailViewPage(request)
+
+        return PresViewPage(req)
     else:
         data = Prescriber.objects.all()
         context = {
@@ -54,7 +55,6 @@ def updatePresSubmit(request):
         pres.credentials = request.POST['credentials']
         pres.specialty = request.POST['specialty']
         pres.isopioidprescriber = request.POST['isopioidprescriber']
-
         pres.save()
         return PresDetailViewPage(request, presid)
     else:
