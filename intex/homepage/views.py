@@ -47,8 +47,11 @@ def searchDrug(req):
     if input2 == 'on' :
         tf = 'True'
 
+    if input != '':
+        druglist = Drug.objects.filter(drugname__icontains=input)
+    else :
+        druglist = Drug.objects.all()
 
-    druglist = Drug.objects.filter(drugname__icontains=input)
     newlist = druglist.filter(isopioid = tf)
 
     count = 0

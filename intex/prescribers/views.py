@@ -1,7 +1,6 @@
 from django.http import request
 from django.shortcuts import render
 from django.apps import apps
-from homepage.models import Prescriber
 
 Prescriber = apps.get_model('homepage', 'Prescriber')
 
