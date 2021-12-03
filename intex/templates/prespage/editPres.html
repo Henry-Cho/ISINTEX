@@ -3,16 +3,16 @@
   <div class="row">
     <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
       <div class="page-title text-center">
-        <h2>Register a New <span class="primary">Prescriber</span></h2>
-        <p>Fill out the information below to register a new prescriber.</p>
+        <h2>Update <span class="primary">Prescriber</span></h2>
       </div>
     </div>
   </div>
   <!-- /.row -->
   <div class="row">
     <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
-      <form class="row no-gutter" action="{% url 'newPres'%}" method="post">
+      <form class="row no-gutter" action="{% url 'updatePres'%}" method="post">
         {% csrf_token %}
+        <input type="hidden" id="presid" name="presid" value="{{pres.id}}" />
         <div class="col-lg-12 col-lg-12">
           <div class="input-field">
             <input
@@ -20,7 +20,7 @@
               class="form-control"
               name="fname"
               id="fname"
-              placeholder="First Name"
+              value="{{pres.fname}}"
             />
           </div>
         </div>
@@ -33,7 +33,7 @@
               class="form-control"
               name="lname"
               id="lname"
-              placeholder="Last Name"
+              value="{{pres.lname}}"
             />
           </div>
         </div>
@@ -46,7 +46,7 @@
               class="form-control"
               name="gender"
               id="gender"
-              placeholder="Gender"
+              value="{{pres.gender}}"
             />
           </div>
         </div>
@@ -59,7 +59,7 @@
               class="form-control"
               name="state"
               id="state"
-              placeholder="State"
+              value="{{pres.state}}"
             />
           </div>
         </div>
@@ -72,7 +72,7 @@
               class="form-control"
               name="credentials"
               id="credentials"
-              placeholder="Credential"
+              value="{{pres.credentials}}"
             />
           </div>
         </div>
@@ -85,7 +85,7 @@
               class="form-control"
               name="specialty"
               id="specialty"
-              placeholder="Specialty"
+              value="{{pres.specialty}}"
             />
           </div>
         </div>
@@ -98,9 +98,7 @@
               class="form-control"
               name="isopioidprescriber"
               id="isopioidprescriber"
-              placeholder="Prescribes opioids?"
             >
-              <option value="" disabled selected>Prescribes opioids?</option>
               <option value="True">True</option>
               <option value="False">False</option>
             </select>
@@ -108,21 +106,13 @@
         </div>
         <br />
         <!-- ./col- -->
-        <div class="col-lg-12 col-lg-12">
-          <div class="input-field">
-            <input
-              type="number"
-              class="form-control"
-              name="totalprescriptions"
-              id="totalprescriptions"
-              placeholder="To Date Prescriptions"
-            />
-          </div>
-        </div>
-        <br />
-        <!-- ./col- -->
         <span class="btn">
-          <button type="submit" class="text-uppercase">Create</button>
+          <button
+            type="submit"
+            class="btn btn-primary btn-custom-border text-uppercase"
+          >
+            Update
+          </button>
         </span>
         <!-- ./col- -->
       </form>
@@ -133,4 +123,5 @@
   <!-- /.row -->
 </div>
 <!-- /.container -->
+
 {%endblock%}
