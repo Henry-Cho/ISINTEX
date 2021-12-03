@@ -22,7 +22,7 @@ class Prescriber(models.Model):
     totalprescriptions = models.IntegerField(blank=False)
 
     class Meta:
-        db_table = "pd_Prescriber"
+        db_table = "pd_prescriber"
     
 
     

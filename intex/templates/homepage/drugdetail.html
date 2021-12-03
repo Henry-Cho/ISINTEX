@@ -1,18 +1,18 @@
 {% extends 'base.html' %}{%load static%} {%block content%}
 
 <div class="container">
-    <div class="cont">
-        <h2>Drug Detail</h2>
-        <div class="sub">
-            <span>{{ drug.drugname }}</span>
-            <span>{{ drug.isopioid }}</span>
-        </div>
-
-        <h2>Top 10 Prescriber List</h2>
-        {% for p in prescriber %}
-            <p>{{p.fname}} {{p.lname}}</p>
-        {% endfor %}
+  <div class="cont">
+    <h2>Drug Detail</h2>
+    <div class="sub">
+      <span>{{ drug.drugname }}</span>
+      <span>{{ drug.isopioid }}</span>
     </div>
+
+    <h2>Top 10 Prescriber List</h2>
+    {% for p in prescriber %}
+    <p>{{p.fname}} {{p.lname}} {{p.credentials}} {{p.drugQty}}</p>
+    {% endfor %}
+  </div>
 </div>
 <!-- /.container -->
 {% endblock %}

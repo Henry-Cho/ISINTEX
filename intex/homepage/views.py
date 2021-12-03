@@ -24,7 +24,7 @@ def drugDetailViewPage(req, id) :
 
     print(drugName)
 
-    sQuery = f'SELECT id, fname, lname, {drugName} AS drugQty FROM pd_prescriber '
+    sQuery = f'SELECT id, fname, lname, credentials, {drugName} AS drugQty FROM pd_prescriber '
 
     if (drugName != '') :
         sQuery += f'ORDER BY drugQty DESC LIMIT 10;'
