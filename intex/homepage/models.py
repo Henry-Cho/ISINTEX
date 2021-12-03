@@ -24,5 +24,7 @@ class Prescriber(models.Model):
     class Meta:
         db_table = "pd_Prescriber"
     
+
+    
     def __str__(self):
         return (self.fname)
