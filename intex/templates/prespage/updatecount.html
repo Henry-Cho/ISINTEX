@@ -1,0 +1,312 @@
+{%extends 'base.html'%}{%load static%}{%block content%}
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+      <div class="page-title text-center">
+        <h2>Update <span class="primary">Count</span></h2>
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
+      <form
+        class="row no-gutter"
+        action="{% url 'updateCountNum'%}"
+        method="post"
+      >
+        {% csrf_token %}
+        <input type="hidden" id="presid" name="presid" value="{{pres.id}}" />
+        <div class="col-lg-12 col-lg-12">
+          <div class="input-field">
+            <label for="abilify">Please Select Drug to update for {{pres.fname}} {{pres.lname}}, {{pres.credentials}} :</label>
+            <select class="form-control" id="drug" name="drug" required>
+                abilify'></option>
+            
+                <option value='acetaminophencodeine'>acetaminophencodeine</option>    
+                <option value='acyclovir'>acyclovir</option>    
+                <option value='advairdiskus'>advairdiskus</option>    
+                <option value='aggrenox'>aggrenox</option>    
+                <option value='alendronatesodium'>alendronatesodium</option>    
+                <option value='allopurinol'>allopurinol</option>    
+                <option value='alprazolam'>alprazolam</option>    
+                <option value='amiodaronehcl'>amiodaronehcl</option>    
+                <option value='amitriptylinehcl'>amitriptylinehcl</option>    
+                <option value='amlodipinebesylate'>amlodipinebesylate</option>    
+                <option value='amlodipinebesylatebenazepril'>amlodipinebesylatebenazepril</option>    
+                <option value='amoxicillin'>amoxicillin</option>    
+                <option value='amoxtrpotassiumclavulanate'>amoxtrpotassiumclavulanate</option>    
+                <option value='amphetaminesaltcombo'>amphetaminesaltcombo</option>    
+                <option value='atenolol'>atenolol</option>    
+                <option value='atorvastatincalcium'>atorvastatincalcium</option>    
+                <option value='avodart'>avodart</option>    
+                <option value='azithromycin'>azithromycin</option>    
+                <option value='baclofen'>baclofen</option>    
+                <option value='bdultrafinepenneedle'>bdultrafinepenneedle</option>    
+                <option value='benazeprilhcl'>benazeprilhcl</option>    
+                <option value='benicar'>benicar</option>    
+                <option value='benicarhct'>benicarhct</option>    
+                <option value='benztropinemesylate'>benztropinemesylate</option>    
+                <option value='bisoprololhydrochlorothiazide'>bisoprololhydrochlorothiazide</option>    
+                <option value='brimonidinetartrate'>brimonidinetartrate</option>    
+                <option value='bumetanide'>bumetanide</option>    
+                <option value='bupropionhclsr'>bupropionhclsr</option>    
+                <option value='bupropionxl'>bupropionxl</option>    
+                <option value='buspironehcl'>buspironehcl</option>    
+                <option value='bystolic'>bystolic</option>    
+                <option value='carbamazepine'>carbamazepine</option>    
+                <option value='carbidopalevodopa'>carbidopalevodopa</option>    
+                <option value='carisoprodol'>carisoprodol</option>    
+                <option value='cartiaxt'>cartiaxt</option>    
+                <option value='carvedilol'>carvedilol</option>    
+                <option value='cefuroxime'>cefuroxime</option>    
+                <option value='celebrex'>celebrex</option>    
+                <option value='cephalexin'>cephalexin</option>    
+                <option value='chlorhexidinegluconate'>chlorhexidinegluconate</option>    
+                <option value='chlorthalidone'>chlorthalidone</option>    
+                <option value='cilostazol'>cilostazol</option>    
+                <option value='ciprofloxacinhcl'>ciprofloxacinhcl</option>    
+                <option value='citalopramhbr'>citalopramhbr</option>    
+                <option value='clindamycinhcl'>clindamycinhcl</option>    
+                <option value='clobetasolpropionate'>clobetasolpropionate</option>    
+                <option value='clonazepam'>clonazepam</option>    
+                <option value='clonidinehcl'>clonidinehcl</option>    
+                <option value='clopidogrel'>clopidogrel</option>    
+                <option value='clotrimazolebetamethasone'>clotrimazolebetamethasone</option>    
+                <option value='colcrys'>colcrys</option>    
+                <option value='combiventrespimat'>combiventrespimat</option>    
+                <option value='crestor'>crestor</option>    
+                <option value='cyclobenzaprinehcl'>cyclobenzaprinehcl</option>    
+                <option value='dexilant'>dexilant</option>    
+                <option value='diazepam'>diazepam</option>    
+                <option value='diclofenacsodium'>diclofenacsodium</option>    
+                <option value='dicyclominehcl'>dicyclominehcl</option>    
+                <option value='digox'>digox</option>    
+                <option value='digoxin'>digoxin</option>    
+                <option value='diltiazem24hrcd'>diltiazem24hrcd</option>    
+                <option value='diltiazem24hrer'>diltiazem24hrer</option>    
+                <option value='diltiazemer'>diltiazemer</option>    
+                <option value='diltiazemhcl'>diltiazemhcl</option>    
+                <option value='diovan'>diovan</option>    
+                <option value='diphenoxylateatropine'>diphenoxylateatropine</option>    
+                <option value='divalproexsodium'>divalproexsodium</option>    
+                <option value='divalproexsodiumer'>divalproexsodiumer</option>    
+                <option value='donepezilhcl'>donepezilhcl</option>    
+                <option value='dorzolamidetimolol'>dorzolamidetimolol</option>    
+                <option value='doxazosinmesylate'>doxazosinmesylate</option>    
+                <option value='doxepinhcl'>doxepinhcl</option>    
+                <option value='doxycyclinehyclate'>doxycyclinehyclate</option>    
+                <option value='duloxetinehcl'>duloxetinehcl</option>    
+                <option value='enalaprilmaleate'>enalaprilmaleate</option>    
+                <option value='escitalopramoxalate'>escitalopramoxalate</option>    
+                <option value='estradiol'>estradiol</option>    
+                <option value='exelon'>exelon</option>    
+                <option value='famotidine'>famotidine</option>    
+                <option value='felodipineer'>felodipineer</option>    
+                <option value='fenofibrate'>fenofibrate</option>    
+                <option value='fentanyl'>fentanyl</option>    
+                <option value='finasteride'>finasteride</option>    
+                <option value='floventhfa'>floventhfa</option>    
+                <option value='fluconazole'>fluconazole</option>    
+                <option value='fluoxetinehcl'>fluoxetinehcl</option>    
+                <option value='fluticasonepropionate'>fluticasonepropionate</option>    
+                <option value='furosemide'>furosemide</option>    
+                <option value='gabapentin'>gabapentin</option>    
+                <option value='gemfibrozil'>gemfibrozil</option>    
+                <option value='glimepiride'>glimepiride</option>    
+                <option value='glipizide'>glipizide</option>    
+                <option value='glipizideer'>glipizideer</option>    
+                <option value='glipizidexl'>glipizidexl</option>    
+                <option value='glyburide'>glyburide</option>    
+                <option value='haloperidol'>haloperidol</option>    
+                <option value='humalog'>humalog</option>    
+                <option value='hydralazinehcl'>hydralazinehcl</option>    
+                <option value='hydrochlorothiazide'>hydrochlorothiazide</option>    
+                <option value='hydrocodoneacetaminophen'>hydrocodoneacetaminophen</option>    
+                <option value='hydrocortisone'>hydrocortisone</option>    
+                <option value='hydromorphonehcl'>hydromorphonehcl</option>    
+                <option value='hydroxyzinehcl'>hydroxyzinehcl</option>    
+                <option value='ibandronatesodium'>ibandronatesodium</option>    
+                <option value='ibuprofen'>ibuprofen</option>    
+                <option value='insulinsyringe'>insulinsyringe</option>    
+                <option value='ipratropiumbromide'>ipratropiumbromide</option>    
+                <option value='irbesartan'>irbesartan</option>    
+                <option value='isosorbidemononitrateer'>isosorbidemononitrateer</option>    
+                <option value='jantoven'>jantoven</option>    
+                <option value='janumet'>janumet</option>    
+                <option value='januvia'>januvia</option>    
+                <option value='ketoconazole'>ketoconazole</option>    
+                <option value='klorcon10'>klorcon10</option>    
+                <option value='klorconm10'>klorconm10</option>    
+                <option value='klorconm20'>klorconm20</option>    
+                <option value='labetalolhcl'>labetalolhcl</option>    
+                <option value='lactulose'>lactulose</option>    
+                <option value='lamotrigine'>lamotrigine</option>    
+                <option value='lansoprazole'>lansoprazole</option>    
+                <option value='lantus'>lantus</option>    
+                <option value='lantussolostar'>lantussolostar</option>    
+                <option value='latanoprost'>latanoprost</option>    
+                <option value='levemir'>levemir</option>    
+                <option value='levemirflexpen'>levemirflexpen</option>    
+                <option value='levetiracetam'>levetiracetam</option>    
+                <option value='levofloxacin'>levofloxacin</option>    
+                <option value='levothyroxinesodium'>levothyroxinesodium</option>    
+                <option value='lidocaine'>lidocaine</option>    
+                <option value='lisinopril'>lisinopril</option>    
+                <option value='lisinoprilhydrochlorothiazide'>lisinoprilhydrochlorothiazide</option>    
+                <option value='lithiumcarbonate'>lithiumcarbonate</option>    
+                <option value='lorazepam'>lorazepam</option>    
+                <option value='losartanhydrochlorothiazide'>losartanhydrochlorothiazide</option>    
+                <option value='losartanpotassium'>losartanpotassium</option>    
+                <option value='lovastatin'>lovastatin</option>    
+                <option value='lovaza'>lovaza</option>    
+                <option value='lumigan'>lumigan</option>    
+                <option value='lyrica'>lyrica</option>    
+                <option value='meclizinehcl'>meclizinehcl</option>    
+                <option value='meloxicam'>meloxicam</option>    
+                <option value='metforminhcl'>metforminhcl</option>    
+                <option value='metforminhcler'>metforminhcler</option>    
+                <option value='methadonehcl'>methadonehcl</option>    
+                <option value='methocarbamol'>methocarbamol</option>    
+                <option value='methotrexate'>methotrexate</option>    
+                <option value='methylprednisolone'>methylprednisolone</option>    
+                <option value='metoclopramidehcl'>metoclopramidehcl</option>    
+                <option value='metolazone'>metolazone</option>    
+                <option value='metoprololsuccinate'>metoprololsuccinate</option>    
+                <option value='metoprololtartrate'>metoprololtartrate</option>    
+                <option value='metronidazole'>metronidazole</option>    
+                <option value='mirtazapine'>mirtazapine</option>    
+                <option value='montelukastsodium'>montelukastsodium</option>    
+                <option value='morphinesulfate'>morphinesulfate</option>    
+                <option value='morphinesulfateer'>morphinesulfateer</option>    
+                <option value='mupirocin'>mupirocin</option>    
+                <option value='nabumetone'>nabumetone</option>    
+                <option value='namenda'>namenda</option>    
+                <option value='namendaxr'>namendaxr</option>    
+                <option value='naproxen'>naproxen</option>    
+                <option value='nasonex'>nasonex</option>    
+                <option value='nexium'>nexium</option>    
+                <option value='niaciner'>niaciner</option>    
+                <option value='nifedicalxl'>nifedicalxl</option>    
+                <option value='nifedipineer'>nifedipineer</option>    
+                <option value='nitrofurantoinmonomacro'>nitrofurantoinmonomacro</option>    
+                <option value='nitrostat'>nitrostat</option>    
+                <option value='nortriptylinehcl'>nortriptylinehcl</option>    
+                <option value='novolog'>novolog</option>    
+                <option value='novologflexpen'>novologflexpen</option>    
+                <option value='nystatin'>nystatin</option>    
+                <option value='olanzapine'>olanzapine</option>    
+                <option value='omeprazole'>omeprazole</option>    
+                <option value='ondansetronhcl'>ondansetronhcl</option>    
+                <option value='ondansetronodt'>ondansetronodt</option>    
+                <option value='onglyza'>onglyza</option>    
+                <option value='oxcarbazepine'>oxcarbazepine</option>    
+                <option value='oxybutyninchloride'>oxybutyninchloride</option>    
+                <option value='oxybutyninchlorideer'>oxybutyninchlorideer</option>    
+                <option value='oxycodoneacetaminophen'>oxycodoneacetaminophen</option>    
+                <option value='oxycodonehcl'>oxycodonehcl</option>    
+                <option value='oxycontin'>oxycontin</option>    
+                <option value='pantoprazolesodium'>pantoprazolesodium</option>    
+                <option value='paroxetinehcl'>paroxetinehcl</option>    
+                <option value='phenobarbital'>phenobarbital</option>    
+                <option value='phenytoinsodiumextended'>phenytoinsodiumextended</option>    
+                <option value='pioglitazonehcl'>pioglitazonehcl</option>    
+                <option value='polyethyleneglycol3350'>polyethyleneglycol3350</option>    
+                <option value='potassiumchloride'>potassiumchloride</option>    
+                <option value='pradaxa'>pradaxa</option>    
+                <option value='pramipexoledihydrochloride'>pramipexoledihydrochloride</option>    
+                <option value='pravastatinsodium'>pravastatinsodium</option>    
+                <option value='prednisone'>prednisone</option>    
+                <option value='premarin'>premarin</option>    
+                <option value='primidone'>primidone</option>    
+                <option value='proairhfa'>proairhfa</option>    
+                <option value='promethazinehcl'>promethazinehcl</option>    
+                <option value='propranololhcl'>propranololhcl</option>    
+                <option value='propranololhcler'>propranololhcler</option>    
+                <option value='quetiapinefumarate'>quetiapinefumarate</option>    
+                <option value='quinaprilhcl'>quinaprilhcl</option>    
+                <option value='raloxifenehcl'>raloxifenehcl</option>    
+                <option value='ramipril'>ramipril</option>    
+                <option value='ranexa'>ranexa</option>    
+                <option value='ranitidinehcl'>ranitidinehcl</option>    
+                <option value='restasis'>restasis</option>    
+                <option value='risperidone'>risperidone</option>    
+                <option value='ropinirolehcl'>ropinirolehcl</option>    
+                <option value='seroquelxr'>seroquelxr</option>    
+                <option value='sertralinehcl'>sertralinehcl</option>    
+                <option value='simvastatin'>simvastatin</option>    
+                <option value='sotalol'>sotalol</option>    
+                <option value='spiriva'>spiriva</option>    
+                <option value='spironolactone'>spironolactone</option>    
+                <option value='sucralfate'>sucralfate</option>    
+                <option value='sulfamethoxazoletrimethoprim'>sulfamethoxazoletrimethoprim</option>    
+                <option value='sumatriptansuccinate'>sumatriptansuccinate</option>    
+                <option value='symbicort'>symbicort</option>    
+                <option value='synthroid'>synthroid</option>    
+                <option value='tamsulosinhcl'>tamsulosinhcl</option>    
+                <option value='temazepam'>temazepam</option>    
+                <option value='terazosinhcl'>terazosinhcl</option>    
+                <option value='timololmaleate'>timololmaleate</option>    
+                <option value='tizanidinehcl'>tizanidinehcl</option>    
+                <option value='tolterodinetartrateer'>tolterodinetartrateer</option>    
+                <option value='topiramate'>topiramate</option>    
+                <option value='toprolxl'>toprolxl</option>    
+                <option value='torsemide'>torsemide</option>    
+                <option value='tramadolhcl'>tramadolhcl</option>    
+                <option value='travatanz'>travatanz</option>    
+                <option value='trazodonehcl'>trazodonehcl</option>    
+                <option value='triamcinoloneacetonide'>triamcinoloneacetonide</option>    
+                <option value='triamterenehydrochlorothiazid'>triamterenehydrochlorothiazid</option>    
+                <option value='valacyclovir'>valacyclovir</option>    
+                <option value='valsartan'>valsartan</option>    
+                <option value='valsartanhydrochlorothiazide'>valsartanhydrochlorothiazide</option>    
+                <option value='venlafaxinehcl'>venlafaxinehcl</option>    
+                <option value='venlafaxinehcler'>venlafaxinehcler</option>    
+                <option value='ventolinhfa'>ventolinhfa</option>    
+                <option value='verapamiler'>verapamiler</option>    
+                <option value='vesicare'>vesicare</option>    
+                <option value='voltaren'>voltaren</option>    
+                <option value='vytorin'>vytorin</option>    
+                <option value='warfarinsodium'>warfarinsodium</option>    
+                <option value='xarelto'>xarelto</option>    
+                <option value='zetia'>zetia</option>    
+                <option value='ziprasidonehcl'>ziprasidonehcl</option>    
+                <option value='zolpidemtartrate'>zolpidemtartrate</option>    
+            </select>
+          </div>
+        </div>
+        <br />
+        <div class="col-lg-12 col-lg-12">
+            <div class="input-field">
+              <input
+                type="number"
+                class="form-control"
+                name="count"
+                id="count"
+                placeholder="Adding Count"
+                required
+              />
+            </div>
+          </div>
+          <br />
+        <!-- ./col- -->
+        <span class="btn">
+          <button
+            type="submit"
+            class="btn btn-primary btn-custom-border text-uppercase"
+            onclick="formcheck(); return false"
+          >
+            Update
+          </button>
+        </span>
+        <!-- ./col- -->
+      </form>
+      <!-- /.row -->
+    </div>
+    <!-- /.col- -->
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.container -->
+
+{%endblock%}

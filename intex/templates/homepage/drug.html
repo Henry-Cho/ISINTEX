@@ -1,16 +1,26 @@
 {% extends 'base.html' %}{%load static%} {%block content%}
 
 <div class="container">
-    <h2>Drug List</h2>
-
-    {% for d in druglist%}
-    <a href= '/drugdetail/{{d.id}}'>
-        <div class="sub">
-            <span>{{ d.drugname }}</span>
-            <span>{{ d.isopioid }}</span>
+    <div class="cont">
+        <h2>Drug List</h2>
+        <div style="margin-bottom: 12px;">
+            <form name="form" method="get" action="{% url 'drugsearch' %}" >
+                <label>Search Medicine: </label>
+                <input id='search' type="text" name="search"> 
+                <label for='filter'>Filter Opioid</label>
+                <input id= 'filter' type="checkbox" name='filter'>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
         </div>
-    </a>
-    {% endfor %}
+        {% for d in druglist%}
+        <a href= '/drugdetail/{{d.id}}'>
+            <div class="sub">
+                <span>{{ d.drugname }}</span>
+                <span>{{ d.isopioid }}</span>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
 </div>
 <!-- /.container -->
 {% endblock %}
