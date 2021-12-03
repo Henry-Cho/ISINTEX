@@ -1408,6 +1408,12 @@ label {
   cursor: pointer;
 }
 
+.cont {
+  padding: 16px;
+  background-color: white;
+  border-radius: 20px;
+  opacity: 0.6;
+}
 /*------------------------------------------------
 	Responsive Media Queries
 -------------------------------------------------*/
