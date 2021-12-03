@@ -8,21 +8,9 @@ Drugnpi = apps.get_model('homepage', 'Drugnpi')
 
 # Create your views here.
 def newPageView(request) :
-    data = Prescriber.objects.all()
 
-    idx = 0
-    ddd = ''
-    for d in data :
-        if idx > 0 :
-            break
-        ddd = d
-        idx = idx + 1
 
-    context = {
-        'pres': ddd
-    }
-
-    return render(request, 'prespage/new.html', context)
+    return render(request, 'prespage/new.html')
 
 def newPresCreate(req):
     if req.method == "POST":
@@ -37,7 +25,8 @@ def newPresCreate(req):
         newPres.isopioidprescriber = req.POST.get("isopioidprescriber")
         newPres.totalprescriptions = req.POST.get("totalprescriptions")
         newPres.save()
-        return PresDetailViewPage(request)
+
+        return PresViewPage(req)
     else:
         data = Prescriber.objects.all()
         context = {
@@ -68,7 +57,6 @@ def updatePresSubmit(request):
         pres.credentials = request.POST['credentials']
         pres.specialty = request.POST['specialty']
         pres.isopioidprescriber = request.POST['isopioidprescriber']
-
         pres.save()
         return PresDetailViewPage(request, presid)
     else:
@@ -112,6 +100,10 @@ def PresDetailViewPage(req, id) :
 def pressearch(req):
     input = req.GET['search']
     input2 = req.GET['search1']
+    input3 = req.GET['search2']
+    input4 = req.GET['search3']
+    input5 = req.GET['search4']
+    input6 = req.GET['search5']
 
     if input != '':
         preslist = Prescriber.objects.filter(fname__icontains=input)
@@ -120,8 +112,13 @@ def pressearch(req):
 
     newlist = preslist.filter(lname__icontains=input2)
 
+    newlist1 = newlist.filter(gender__icontains=input3)
+    newlist2 = newlist1.filter(credentials__icontains=input4)
+    newlist3 = newlist2.filter(state__icontains=input5)
+    newlist4 = newlist3.filter(specialty__icontains=input6)
+
     count = 0
-    for d in newlist :
+    for d in newlist4 :
         count += 1
     
     obj = {
@@ -129,8 +126,16 @@ def pressearch(req):
     }
 
     context = {
-        'drug': newlist,
+        'drug': newlist4,
         'count': obj
     }
 
     return render(req, 'prespage/search.html', context)
+
+
+def delete(req, presid):
+    data = Prescriber.objects.get(id = presid)
+
+    data.delete()
+
+    return PresViewPage(req)
