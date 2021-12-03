@@ -37,6 +37,7 @@ h6 {
 
 p {
   margin-bottom: 20px;
+  color: #1e2530;
 }
 p:last-child {
   margin-bottom: 0;
@@ -377,9 +378,6 @@ label {
   background-repeat: no-repeat;
   background-size: cover;
   vertical-align: middle;
-}
-.page-home .overlay {
-  background-color: rgba(255, 255, 255, 0.93);
 }
 
 /* End of container */
@@ -910,6 +908,11 @@ label {
   -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
 }
+
+.col-md-offset-1 {
+  margin-left: 0 !important;
+}
+
 .service-hex:hover {
   z-index: 2;
 }
@@ -1175,6 +1178,8 @@ label {
 
 .contact-form .input-field {
   margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .contact-form .input-field.name {
   margin-right: 5px;
@@ -1227,6 +1232,12 @@ label {
   position: absolute;
   left: 0;
   top: 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .msg-success,
@@ -1386,6 +1397,17 @@ label {
 .pattern-options li img {
   width: 100%;
   height: 100%;
+}
+
+.sub {
+  width: 100%;
+  border: 1px solid black;
+  box-shadow: inset;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  color: black;
+  cursor: pointer;
 }
 
 /*------------------------------------------------

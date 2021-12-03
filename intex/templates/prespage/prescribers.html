@@ -1,0 +1,28 @@
+{% extends 'base.html' %}{%load static%} {%block content%}
+
+<div class="container">
+  <div class="cont">
+    <h2>Prescriber List</h2>
+    <div style="margin-bottom: 12px">
+      <form name="form" method="get" action="{% url 'pressearch' %}">
+        <label>Search First Name: </label>
+        <input id="search" type="text" name="search" />
+        <label>Search Last Name: </label>
+        <input id="search1" type="text" name="search1" />
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </div>
+
+    {% for d in preslist%}
+    <a href="/prescribers/{{d.id}}">
+      <div class="sub">
+        <span>{{ d.fname }}</span>
+        <span>{{ d.lname }}</span>
+        <span>{{ d.credentials }}</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+<!-- /.container -->
+{% endblock %}
