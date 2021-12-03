@@ -93,3 +93,29 @@ def PresDetailViewPage(req, id) :
         'pres': record
     }
     return render(req, 'prespage/presdetail.html', context)
+
+def pressearch(req):
+    input = req.GET['search']
+    input2 = req.GET['search1']
+
+    if input != '':
+        preslist = Prescriber.objects.filter(fname__icontains=input)
+    else :
+        preslist = Prescriber.objects.all()
+
+    newlist = preslist.filter(lname__icontains=input2)
+
+    count = 0
+    for d in newlist :
+        count += 1
+    
+    obj = {
+        "count": count
+    }
+
+    context = {
+        'drug': newlist,
+        'count': obj
+    }
+
+    return render(req, 'prespage/search.html', context)

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import newPageView, PresViewPage, PresDetailViewPage, newPresCreate, updatePres, updatePresSubmit
+from .views import newPageView, PresViewPage, PresDetailViewPage, newPresCreate, updatePres, updatePresSubmit, pressearch
 
 urlpatterns = [
     path("new/", newPageView, name="new"),
@@ -8,4 +8,5 @@ urlpatterns = [
     path('createNew/', newPresCreate, name='newPres'),
     path('update/<int:presid>/', updatePres, name="update"),
     path("updatePres/", updatePresSubmit, name='updatePres'),
+    path("pressearch/", pressearch, name="pressearch")
     ]
