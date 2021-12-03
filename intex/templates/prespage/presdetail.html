@@ -21,6 +21,13 @@
   </a>
 </span>
 <span class="btn">
+  <a href="{% url 'updateCount' presid=pres.id%}">
+    <button class="btn btn-primary btn-custom-border text-uppercase">
+      Update Prescription Count
+    </button>
+  </a>
+</span>
+<span class="btn">
   <a href="{% url 'delete' presid=pres.id%}"
     ><button class="btn btn-primary btn-custom-border text-uppercase">
       Delete

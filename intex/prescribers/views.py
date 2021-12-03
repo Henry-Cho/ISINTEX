@@ -1,9 +1,10 @@
+
 from django.http import request
 from django.shortcuts import render
 from django.apps import apps
 
 Prescriber = apps.get_model('homepage', 'Prescriber')
-
+Drug = apps.get_model('homepage', 'Drug')
 # Create your views here.
 def newPageView(request) :
 
@@ -124,3 +125,27 @@ def delete(req, presid):
     data.delete()
 
     return PresViewPage(req)
+
+def updateCount(req, presid):
+    data = Prescriber.objects.get(id = presid)
+
+    context = {
+        "pres": data
+    }
+    return render(req, 'prespage/updatecount.html', context)
+
+def updateCountNum(req):
+    if req.method == 'POST':
+        presid = req.POST['presid']
+        drugName = req.POST['drug']
+
+        pres = Prescriber.objects.get(id=presid)
+
+        print(pres)
+        pres.drugName += req.POST['count']
+
+
+        pres.save()
+        return PresDetailViewPage(req, presid)
+    else:
+        return PresViewPage(req)

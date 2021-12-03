@@ -21,6 +21,7 @@
               name="fname"
               id="fname"
               placeholder="First Name"
+              required
             />
           </div>
         </div>
@@ -34,6 +35,7 @@
               name="lname"
               id="lname"
               placeholder="Last Name"
+              required
             />
           </div>
         </div>
@@ -41,20 +43,18 @@
         <!-- ./col- -->
         <div class="col-lg-12 col-lg-12">
           <div class="input-field">
-            <input
-              type="text"
-              class="form-control"
-              name="gender"
-              id="gender"
-              placeholder="Gender"
-            />
+            <select class="form-control" id="gender" name="gender" required>
+              <option value="" disabled selected>Gender</option>
+              <option value="M">Male</option>
+              <option value="F">Female</option></select
+            ><br />
           </div>
         </div>
-        <br />
         <!-- ./col- -->
         <div class="col-lg-12 col-lg-12">
           <div class="input-field">
-            <select name="state" id="state">
+            <select class="form-control" name="state" id="state" required>
+              <option value="" disabled selected>State:</option>
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
               <option value="AZ">Arizona</option>
@@ -119,6 +119,7 @@
               name="credentials"
               id="credentials"
               placeholder="Credential"
+              required
             />
           </div>
         </div>
@@ -132,6 +133,7 @@
               name="specialty"
               id="specialty"
               placeholder="Specialty"
+              required
             />
           </div>
         </div>
@@ -145,10 +147,11 @@
               name="isopioidprescriber"
               id="isopioidprescriber"
               placeholder="Prescribes opioids?"
+              required
             >
               <option value="" disabled selected>Prescribes opioids?</option>
-              <option value="True">True</option>
-              <option value="False">False</option>
+              <option value="True">Yes</option>
+              <option value="False">No</option>
             </select>
           </div>
         </div>
@@ -162,13 +165,20 @@
               name="totalprescriptions"
               id="totalprescriptions"
               placeholder="To Date Prescriptions"
+              required
             />
           </div>
         </div>
         <br />
         <!-- ./col- -->
         <span class="btn">
-          <button type="submit" class="btn btn-primary">Create</button>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            onclick="formcheck(); return false"
+          >
+            Create
+          </button>
         </span>
         <!-- ./col- -->
       </form>

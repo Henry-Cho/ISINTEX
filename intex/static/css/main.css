@@ -1178,8 +1178,6 @@ label {
 
 .contact-form .input-field {
   margin-bottom: 10px;
-  margin-left: auto;
-  margin-right: auto;
 }
 .contact-form .input-field.name {
   margin-right: 5px;
@@ -1410,6 +1408,12 @@ label {
   cursor: pointer;
 }
 
+.cont {
+  padding: 16px;
+  background-color: white;
+  border-radius: 20px;
+  opacity: 0.6;
+}
 /*------------------------------------------------
 	Responsive Media Queries
 -------------------------------------------------*/
