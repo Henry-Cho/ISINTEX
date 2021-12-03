@@ -1,8 +1,10 @@
 from django.http import request
 from django.shortcuts import render
 from django.apps import apps
+import json
 
 Prescriber = apps.get_model('homepage', 'Prescriber')
+Drugnpi = apps.get_model('homepage', 'Drugnpi')
 
 # Create your views here.
 def newPageView(request) :
@@ -81,7 +83,6 @@ def updatePresSubmit(request):
 def PresViewPage(req) :
     data = Prescriber.objects.all()
 
-
     context = {
         'preslist': data,
     }
@@ -89,8 +90,22 @@ def PresViewPage(req) :
 
 def PresDetailViewPage(req, id) :
     record = Prescriber.objects.get(id= id)
+    
+    prescriber = Drugnpi.objects.get(id = id)
+
+    newlist = prescriber.__dict__
+
+    arr = []
+
+    for key,val in newlist.items():
+        if val != False :
+            if key == '_state' or key == 'id' :
+                continue
+            arr.append(key)
+    
     context = {
-        'pres': record
+        'pres': record,
+        'drug': arr
     }
     return render(req, 'prespage/presdetail.html', context)
 

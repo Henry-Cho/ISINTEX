@@ -1414,6 +1414,11 @@ label {
   border-radius: 20px;
   opacity: 0.6;
 }
+
+.btnBox {
+  width: 100%;
+  text-align: center;
+}
 /*------------------------------------------------
 	Responsive Media Queries
 -------------------------------------------------*/
