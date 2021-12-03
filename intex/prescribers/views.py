@@ -20,3 +20,18 @@ def newPageView(request) :
     }
 
     return render(request, 'prespage/new.html', context)
+
+def PresViewPage(req) :
+    data = Prescriber.objects.all()
+
+    context = {
+        'preslist': data,
+    }
+    return render(req, 'prespage/prescribers.html', context)
+
+def PresDetailViewPage(req, id) :
+    record = Prescriber.objects.get(id= id)
+    context = {
+        'pres': record
+    }
+    return render(req, 'prespage/presdetail.html', context)
