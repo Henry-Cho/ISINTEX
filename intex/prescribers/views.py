@@ -92,9 +92,11 @@ def PresDetailViewPage(req, id) :
                 continue
             arr.append(key)
     
+    length = str(len(arr))
     context = {
         'pres': record,
-        'drug': arr
+        'drug': arr,
+        "len": length
     }
     return render(req, 'prespage/presdetail.html', context)
 
