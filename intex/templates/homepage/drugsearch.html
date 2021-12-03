@@ -1,0 +1,17 @@
+{% extends 'base.html' %}{%load static%} {%block content%}
+
+<div class="container">
+    <div class="cont">
+        <h2>Search results</h2>
+        {% for d in drug%}
+        <a href= '/drugdetail/{{d.id}}'>
+            <div class="sub">
+                <span>{{ d.drugname }}</span>
+                <span>{{ d.isopioid }}</span>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+<!-- /.container -->
+{% endblock %}
