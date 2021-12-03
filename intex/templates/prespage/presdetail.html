@@ -7,23 +7,25 @@
   </h2>
   <br />
   <div class="sub">
-    <h3>Doctor Details:</h3>
+    <h3>Prescriber Details:</h3>
     <p>Gender: {{ pres.gender }}</p>
     <p>Location: {{ pres.state }}</p>
     <p>Specialty: {{ pres.specialty }}</p>
   </div>
 </div>
-<div class="col-xs-12 col-sm-12">
-  <div class="input-field">
-    <span class="btn">
-      <button
-        type="submit"
-        class="btn btn-primary btn-custom-border text-uppercase"
-      >
-        Update
-      </button>
-    </span>
-  </div>
-</div>
+<span class="btn">
+  <a href="{% url 'update' presid=pres.id%}">
+    <button class="btn btn-primary btn-custom-border text-uppercase">
+      Update
+    </button>
+  </a>
+</span>
+<span class="btn">
+  <a href="#"
+    ><button class="btn btn-primary btn-custom-border text-uppercase">
+      Delete
+    </button></a
+  >
+</span>
 <!-- /.container -->
 {% endblock %}

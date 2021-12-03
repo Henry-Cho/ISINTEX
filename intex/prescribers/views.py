@@ -1,6 +1,7 @@
 from django.http import request
 from django.shortcuts import render
 from django.apps import apps
+from homepage.models import Prescriber
 
 Prescriber = apps.get_model('homepage', 'Prescriber')
 
@@ -23,8 +24,9 @@ def newPageView(request) :
     return render(request, 'prespage/new.html', context)
 
 def newPresCreate(req):
-    if req.method == "post":
+    if req.method == "POST":
         newPres = Prescriber()
+
         newPres.fname = req.POST.get("fname")
         newPres.lname = req.POST.get("lname")
         newPres.gender = req.POST.get("gender")
@@ -34,16 +36,52 @@ def newPresCreate(req):
         newPres.isopioidprescriber = req.POST.get("isopioidprescriber")
         newPres.totalprescriptions = req.POST.get("totalprescriptions")
         newPres.save()
+        return PresDetailViewPage(request)
+    else:
+        data = Prescriber.objects.all()
+        context = {
+            "preslist" : data
+            }
+        
+        return render(request, 'prespage/prescribers.html', context)
 
-    data = Prescriber.objects.all()
+def updatePres(request, presid):
+    data = Prescriber.objects.get(id = presid)
+
     context = {
-        "preslist" : data
-        }
+        "pres": data
+    }
+    return render(request, 'prespage/editPres.html', context)
 
-    return render(request, 'prespage/prescribers.html', context)
+
+def updatePresSubmit(request):
+    if request.method == 'POST':
+        presid = request.POST['presid']
+
+        pres = Prescriber.objects.get(id=presid)
+
+        pres.fname = request.POST['fname']
+        pres.lname = request.POST['lname']
+        pres.gender = request.POST['gender']
+        pres.state = request.POST['state']
+        pres.credentials = request.POST['credentials']
+        pres.specialty = request.POST['specialty']
+        pres.isopioidprescriber = request.POST['isopioidprescriber']
+
+        pres.save()
+        return PresDetailViewPage(request, presid)
+    else:
+        data = Prescriber.objects.all()
+        context = {
+            "preslist" : data
+            }
+        
+        return render(request, 'prespage/prescribers.html', context)
+
 
 def PresViewPage(req) :
     data = Prescriber.objects.all()
+
 
     context = {
         'preslist': data,
