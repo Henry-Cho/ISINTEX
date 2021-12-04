@@ -1,3 +1,14 @@
+function formcheck() {
+  var fields = $(".ss-item-required")
+    .find("select, textarea, input")
+    .serializeArray();
+
+  $.each(fields, function (i, field) {
+    if (!field.value) alert(field.name + " is required");
+  });
+  console.log(fields);
+}
+
 (function ($) {
   "use strict";
 
@@ -80,16 +91,16 @@
       },
       messages: {
         name: {
-          required: "Required",
+          required: "Write your name here",
         },
         email: {
-          required: "Required",
+          required: "No email, no support",
         },
         subject: {
-          required: "Required",
+          required: "you have a reason to contact, write it here",
         },
         message: {
-          required: "Required",
+          required: "You have to write something to send this form",
         },
       },
       submitHandler: function (form) {
