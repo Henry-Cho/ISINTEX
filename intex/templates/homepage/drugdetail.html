@@ -8,9 +8,12 @@
       <span>{{ drug.isopioid }}</span>
     </div>
 
-    <h2>Top 10 Prescriber List</h2>
+    <h2>Top 10 Prescriber List and Count Prescribed</h2>
     {% for p in prescriber %}
-    <p>{{p.fname}} {{p.lname}} {{p.credentials}} {{p.drugqty }}</p>
+    <p>
+      {{p.fname}} {{p.lname}} {{p.credentials}} -
+      <b>{{p.drugqty }}</b>
+    </p>
     {% endfor %}
   </div>
 </div>
