@@ -534,3 +534,14 @@ class Drugnpi(models.Model):
     
     def __int__(self):
         return (self.zetia)
+
+class Triple(models.Model) :
+    prescriberid = models.IntegerField()
+    drugname = models.CharField(max_length=30, default='')
+    qty = models.IntegerField()
+
+    class Meta:
+        db_table = 'pd_triples'
+    
+    def __str__(self) :
+        return self.drugname

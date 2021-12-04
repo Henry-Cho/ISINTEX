@@ -1,11 +1,13 @@
-
+from django.db.models.aggregates import Count
 from django.http import request
 from django.shortcuts import render
 from django.apps import apps
-import json
+from django.db.models import Avg
+from django.db.models import Q
 
 Prescriber = apps.get_model('homepage', 'Prescriber')
 Drugnpi = apps.get_model('homepage', 'Drugnpi')
+Triple = apps.get_model('homepage', 'Triple')
 
 # Create your views here.
 def newPageView(request) :
@@ -80,21 +82,62 @@ def PresViewPage(req) :
 def PresDetailViewPage(req, id) :
     record = Prescriber.objects.get(id= id)
     
+    # length of total record
+    record_len = Prescriber.objects.count()
+    print(record_len)
+
+    # length of record without this particular prescriber
+    without_this= Prescriber.objects.filter(~Q(id=id)).count()
+
+    print(without_this)
+
+    # whole record
+    whole_record = Drugnpi.objects.all()
+    whole_list = whole_record.__dict__
+    
     prescriber = Drugnpi.objects.get(id = id)
 
     newlist = prescriber.__dict__
 
     arr = []
 
+    arr1 = []
+
+    total_count = 0
+        
+    deduct_zero = 0
+
     for key,val in newlist.items():
         if val != False :
             if key == '_state' or key == 'id' :
                 continue
             arr.append(key)
+            # sQuery = f'SELECT id, ((sum({key}) - {val}) / ({record_len} - 1)) AS avgdrug FROM pd_prescriber group by id having id <> {id};'
+            # ss = Prescriber.objects.raw(sQuery)
+            ss = Prescriber.objects.all()
+            sa = ss.aggregate(Avg(key))
+
+            a = Triple.objects.filter(~Q(prescriberid = id, qty = 0))
+            ab = a.filter(drugname = key)
+            ac = ab.aggregate(Avg('qty'))
+
+            key_name = ''
+
+            for a in ac.keys() :
+                key_name = a
+
+            value = ac[key_name]
+            round_val = round(value, 2)
+            
+            arr1.append({"name": key, "avg": round_val})
+    
+            total_count += val
     
     context = {
         'pres': record,
-        'drug': arr
+        'drug': arr,
+        'count': total_count,
+        'test': arr1
     }
     return render(req, 'prespage/presdetail.html', context)
 

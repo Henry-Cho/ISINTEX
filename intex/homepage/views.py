@@ -22,18 +22,19 @@ def drugDetailViewPage(req, id) :
 
     drugName = record.drugname.lower().replace('.', '')
 
-    print(drugName)
-
-    sQuery = f'SELECT id, fname, lname, credentials, {drugName} AS drugQty FROM pd_prescriber '
+    sQuery = f'SELECT id, fname, lname, credentials, {drugName} AS drugqty FROM pd_prescriber '
 
     if (drugName != '') :
-        sQuery += f'ORDER BY drugQty DESC LIMIT 10;'
+        sQuery += f'ORDER BY drugqty DESC LIMIT 10;'
     
     prescriberList = Prescriber.objects.raw(sQuery)
 
+    print(prescriberList)
+
     context = {
         'drug': record,
-        'prescriber': prescriberList
+        'prescriber': prescriberList,
+        'name': drugName
     }
 
     return render(req, 'homepage/drugdetail.html', context)
