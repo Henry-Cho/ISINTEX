@@ -3,15 +3,15 @@
 <div class="container">
   <div class="cont">
     <h2>
-      <span>{{ pres.fname }}</span> <span>{{ pres.lname }}</span
-      ><span>, {{ pres.credentials }}</span>
+      <span><b>{{ pres.fname }}</span> <span>{{ pres.lname }}</span
+      ><span>, {{ pres.credentials }}<b></span>
     </h2>
     <br />
     <div class="sub">
       <h3>Prescriber Details:</h3>
-      <p>Gender: {{ pres.gender }}</p>
-      <p>Location: {{ pres.state }}</p>
-      <p>Specialty: {{ pres.specialty }}</p>
+      <p><h4>Gender: {{ pres.gender }}</h4></p>
+      <p><h4>Location: {{ pres.state }}</h4></p>
+      <p><h4>Specialty: {{ pres.specialty }}</h4></p>
     </div>
     <div class="btnBox">
       <span class="btn">
@@ -37,14 +37,16 @@
       </span>
     </div>
     <br />
-    <h3>Total quantity of prescribed drugs: {{ count }} | {{presCount}}</h3>
+    <h3><b>Total quantity of prescribed drugs:<b></h3>
     <br />
-    <h3>Average amount of prescribed drug:</h3>
+    <h3>{{ count }} | {{presCount}}</h3>
+    <br />
+    <h3><b>Drugs Prescribed and average amount prescribed:<b></h3>
     <br />
     {% for d in test %}
-    <p>{{ d.name }} {{ d.avg }}</p>
+    <p><h4>{{ d.name }}: {{ d.avg }}</h4>
     {% for l in list %}
-    <p>{{ l.qty }}</p>
+    <h4>{{ l.qty }}</h4></p>
     {% endfor %}{% endfor %}
   </div>
 </div>
