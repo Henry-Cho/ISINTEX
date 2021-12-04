@@ -1,51 +1,49 @@
 {% extends 'base.html' %}{%load static%} {%block content%}
 
 <div class="container">
-  <h2>
-    <span>{{ pres.fname }}</span> <span>{{ pres.lname }}</span
-    ><span>, {{ pres.credentials }}</span>
-  </h2>
-  <br />
-  <div class="sub">
-    <h3>Prescriber Details:</h3>
-    <p>Gender: {{ pres.gender }}</p>
-    <p>Location: {{ pres.state }}</p>
-    <p>Specialty: {{ pres.specialty }}</p>
+  <div class="cont">
+    <h2>
+      <span>{{ pres.fname }}</span> <span>{{ pres.lname }}</span
+      ><span>, {{ pres.credentials }}</span>
+    </h2>
+    <br />
+    <div class="sub">
+      <h3>Prescriber Details:</h3>
+      <p>Gender: {{ pres.gender }}</p>
+      <p>Location: {{ pres.state }}</p>
+      <p>Specialty: {{ pres.specialty }}</p>
+    </div>
+    <h3>Total quantity of drug prescribed: {{ count }}</h3>
+    <br>
+    <h3>Average amount of prescribed drug</h3>
+    <br>
+    {% for d in test %}
+    <p>{{ d.name }} {{ d.avg }}</p>
+    {% endfor %}
   </div>
-<<<<<<< HEAD
-  <h3>Total quantity of drug prescribed: {{ count }}</h3>
-  {% for d in test %}
-  <p>{{ d.name }} {{ d.avg }}</p>
-=======
-
-  <p>{% for l in len %}{{l}}{% endfor %}</p>
-  {% for d in drug %}
-  <p>{{ d }}</p>
->>>>>>> 80c9f0f6a4dd8abb76eb8ed2369d4002723e27ea
-  {% endfor %}
-</div>
-<div class="btnBox">
-  <span class="btn">
-    <a href="{% url 'update' presid=pres.id%}">
-      <button class="btn btn-primary btn-custom-border text-uppercase">
-        Update
-      </button>
-    </a>
-  </span>
-  <span class="btn">
-    <a href="{% url 'updateCount' presid=pres.id%}">
-      <button class="btn btn-primary btn-custom-border text-uppercase">
-        Update Prescription Count
-      </button>
-    </a>
-  </span>
-  <span class="btn">
-    <a href="{% url 'delete' presid=pres.id%}"
-      ><button class="btn btn-primary btn-custom-border text-uppercase">
-        Delete
-      </button></a
-    >
-  </span>
+  <div class="btnBox">
+    <span class="btn">
+      <a href="{% url 'update' presid=pres.id%}">
+        <button class="btn btn-primary btn-custom-border text-uppercase">
+          Update
+        </button>
+      </a>
+    </span>
+    <span class="btn">
+      <a href="{% url 'updateCount' presid=pres.id%}">
+        <button class="btn btn-primary btn-custom-border text-uppercase">
+          Update Prescription Count
+        </button>
+      </a>
+    </span>
+    <span class="btn">
+      <a href="{% url 'delete' presid=pres.id%}"
+        ><button class="btn btn-primary btn-custom-border text-uppercase">
+          Delete
+        </button></a
+      >
+    </span>
+  </div>
 </div>
 <!-- /.container -->
 {% endblock %}
