@@ -84,6 +84,7 @@ def PresDetailViewPage(req, id) :
     
     prescriber = Drugnpi.objects.get(id = id)
 
+
     newlist = prescriber.__dict__
 
     arr1 = []
@@ -114,7 +115,7 @@ def PresDetailViewPage(req, id) :
     context = {
         'pres': record,
         'count': total_count,
-        'test': arr1
+        'test': arr1,
     }
     return render(req, 'prespage/presdetail.html', context)
 
@@ -170,17 +171,29 @@ def updateCount(req, presid):
     return render(req, 'prespage/updatecount.html', context)
 
 def updateCountNum(req):
-    # if req.method == 'POST':
-    #     presid = req.POST['presid']
-    #     drugName = req.POST['drug']
+    if req.method == 'POST':
+        presid = req.POST['presid']
+        drugName = req.POST['drug']
 
-    #     pres = Prescriber.objects.get(id=presid)
+        print(drugName)
+        print(presid)
 
-    #     print(pres)
-    #     pres.drugName += req.POST['count']
+        pres = Triple.objects.filter(prescriberid__icontains=presid)
+
+        presDrug = pres.filter(drugname__icontains = drugName)
+
+        if presDrug.drugname == "":
+            presDrug.prescriberid = presid
+            presDrug.drugname = drugName
+            presDrug.qty = req.POST['count']
+            presDrug.save()
+            print(str(presDrug.drugname)+ " now has " + str(presDrug.qty))
+        else:
+            presDrug.qty += req.POST['count'] 
+            presDrug.save()
+            print(str(presDrug.drugname)+ " now has " + str(presDrug.qty))
 
 
-    #     pres.save()
-    #     return PresDetailViewPage(req, presid)
-    # else:
+        return PresDetailViewPage(req, presid)
+    else:
         return PresViewPage(req)

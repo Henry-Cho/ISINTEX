@@ -13,36 +13,39 @@
       <p>Location: {{ pres.state }}</p>
       <p>Specialty: {{ pres.specialty }}</p>
     </div>
+    <div class="btnBox">
+      <span class="btn">
+        <a href="{% url 'update' presid=pres.id%}">
+          <button class="btn btn-primary btn-custom-border text-uppercase">
+            Update
+          </button>
+        </a>
+      </span>
+      <span class="btn">
+        <a href="{% url 'updateCount' presid=pres.id%}">
+          <button class="btn btn-primary btn-custom-border text-uppercase">
+            Update Prescription Count
+          </button>
+        </a>
+      </span>
+      <span class="btn">
+        <a href="{% url 'delete' presid=pres.id%}"
+          ><button class="btn btn-primary btn-custom-border text-uppercase">
+            Delete
+          </button></a
+        >
+      </span>
+    </div>
+    <br />
     <h3>Total quantity of drug prescribed: {{ count }}</h3>
-    <br>
-    <h3>Average amount of prescribed drug</h3>
-    <br>
+    <br />
+    <h3>Average amount of prescribed drug:</h3>
+    <br />
     {% for d in test %}
     <p>{{ d.name }} {{ d.avg }}</p>
-    {% endfor %}
-  </div>
-  <div class="btnBox">
-    <span class="btn">
-      <a href="{% url 'update' presid=pres.id%}">
-        <button class="btn btn-primary btn-custom-border text-uppercase">
-          Update
-        </button>
-      </a>
-    </span>
-    <span class="btn">
-      <a href="{% url 'updateCount' presid=pres.id%}">
-        <button class="btn btn-primary btn-custom-border text-uppercase">
-          Update Prescription Count
-        </button>
-      </a>
-    </span>
-    <span class="btn">
-      <a href="{% url 'delete' presid=pres.id%}"
-        ><button class="btn btn-primary btn-custom-border text-uppercase">
-          Delete
-        </button></a
-      >
-    </span>
+    {% for l in list %}
+    <p>{{ l.qty }}</p>
+    {% endfor %}{% endfor %}
   </div>
 </div>
 <!-- /.container -->
