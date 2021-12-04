@@ -12,9 +12,16 @@
     <p>Location: {{ pres.state }}</p>
     <p>Specialty: {{ pres.specialty }}</p>
   </div>
+<<<<<<< HEAD
   <h3>Total quantity of drug prescribed: {{ count }}</h3>
   {% for d in test %}
   <p>{{ d.name }} {{ d.avg }}</p>
+=======
+
+  <p>{% for l in len %}{{l}}{% endfor %}</p>
+  {% for d in drug %}
+  <p>{{ d }}</p>
+>>>>>>> 80c9f0f6a4dd8abb76eb8ed2369d4002723e27ea
   {% endfor %}
 </div>
 <div class="btnBox">

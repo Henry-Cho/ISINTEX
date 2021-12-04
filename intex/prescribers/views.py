@@ -133,6 +133,7 @@ def PresDetailViewPage(req, id) :
     
             total_count += val
     
+    length = str(len(arr))
     context = {
         'pres': record,
         'drug': arr,
