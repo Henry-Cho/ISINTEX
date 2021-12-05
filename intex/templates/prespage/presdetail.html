@@ -8,7 +8,11 @@
       <a class="menu">ANALYSIS</a>
   </div>
 </nav>
-
+<button class="toTop" onclick="window.scrollTo({
+  top: 0,
+  left: 0,
+  behavior: 'smooth'
+})">⬆</button>
 <div class="container">
   <div class="cont">
     <h2>
@@ -21,8 +25,8 @@
       <p>Gender: {{ pres.gender }}</p>
       <p>Location: {{ pres.state }}</p>
       <p>Specialty: {{ pres.specialty }}</p>
+      <p>Total quantity of drug prescribed: {{ count }}</p>
     </div>
-    <h3>Total quantity of drug prescribed: {{ count }}</h3>
     <br>
     <h3>Average amount of prescribed drug</h3>
     <br>
