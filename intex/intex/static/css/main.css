@@ -226,7 +226,7 @@ label {
 }
 
 .loading-mask {
-  background-color: #1E2530;
+  background-color: #1e2530;
   height: 100%;
   left: 0;
   position: absolute;
@@ -1270,14 +1270,14 @@ form {
 }
 
 .styled-table thead tr {
-  background-color: #1E2530;
+  background-color: #1e2530;
   color: #ffffff;
   text-align: left;
 }
 
 .styled-table th,
 .styled-table td {
-    padding: 12px 15px;
+  padding: 12px 15px;
 }
 
 .styled-table tbody tr {
@@ -1290,7 +1290,7 @@ form {
 }
 
 .styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #1E2530;
+  border-bottom: 2px solid #1e2530;
 }
 
 /* =================================== */
@@ -1400,7 +1400,7 @@ form {
 }
 
 .color-options li.c1 {
-  background-color: #1E2530;
+  background-color: #1e2530;
 }
 
 .color-options li.c2 {
@@ -1480,6 +1480,13 @@ body {
   border-radius: 20px;
   opacity: 0.6;
 }
+.cont2 {
+  margin-top: 100px;
+  padding: 16px 20px;
+  background-color: white;
+  border-radius: 20px;
+  opacity: 1;
+}
 
 .btnBox {
   width: 100%;
@@ -1490,7 +1497,7 @@ body {
   position: fixed;
   bottom: 50px;
   right: 80px;
-  background-color: #1E2530;
+  background-color: #1e2530;
   border: none;
   width: 50px;
   height: 50px;
@@ -1516,11 +1523,10 @@ nav {
   top: 0;
   position: absolute;
   z-index: 5;
-  background: #1E2530;
+  background: #1e2530;
   color: white;
   margin-bottom: 60px;
 }
-
 
 .menu_bar {
   display: flex;
@@ -1535,7 +1541,7 @@ nav {
 
 .menu:hover {
   background: white;
-  color: #1E2530;
+  color: #1e2530;
   transition: all 200ms ease-in-out;
 }
 /*------------------------------------------------

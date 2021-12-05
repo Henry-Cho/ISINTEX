@@ -414,6 +414,7 @@ def pressearch(req):
     newlist3 = newlist2.filter(state__icontains=input5)
     newlist4 = newlist3.filter(specialty__icontains=input6)
 
+
     count = 0
     for d in newlist4 :
         count += 1
@@ -448,26 +449,6 @@ def updateCount(req, presid):
 def updateCountNum(req):
     if req.method == 'POST':
         presid = req.POST['presid']
-
-        # print(drugName)
-        # print(presid)
-
-        # pres = Triple.objects.filter(prescriberid__icontains=presid)
-
-        # presDrug = pres.filter(drugname__icontains = drugName)
-
-        # print(presDrug)
-
-        # if presDrug.drugname == "":
-        #     presDrug.prescriberid = presid
-        #     presDrug.drugname = drugName
-        #     presDrug.qty = req.POST['count']
-        #     presDrug.save()
-        #     print(str(presDrug.drugname)+ " now has " + str(presDrug.qty))
-        # else:
-        #     presDrug.qty += req.POST['count'] 
-        #     presDrug.save()
-        #     print(str(presDrug.drugname)+ " now has " + str(presDrug.qty))
 
         pres = Prescriber.objects.get(id=presid)
         count = req.POST['count']

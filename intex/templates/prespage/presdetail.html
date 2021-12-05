@@ -5,7 +5,7 @@
     <a class="menu" href="{% url 'index' %}">HOME</a>
     <a class="menu" href="{% url 'pres' %}">PRESCRIBER</a>
     <a class="menu" href="{% url 'drug' %}">DRUG</a>
-    <a class="menu">ANALYSIS</a>
+    <a class="menu" href="{% url 'analysis' %}">ANALYSIS</a>
   </div>
 </nav>
 <button
@@ -27,13 +27,40 @@
     </h2>
     <br />
     <div class="sub">
-      <p>Gender: {{ pres.gender }}</p>
-      <p>Location: {{ pres.state }}</p>
-      <p>Specialty: {{ pres.specialty }}</p>
-      <p>Total quantity of drug prescribed: {{ count }}</p>
+      <span><b>Gender:</b> {{ pres.gender }} | </span>
+      <span><b>Location:</b> {{ pres.state }} | </span>
+      <span><b>Specialty:</b> {{ pres.specialty }} | </span>
+      <span><b>Total quantity of prescribed drugs: </b>{{presCount}} | </span>
+      <span
+        ><b>Prescribes Opioids:</b> {{ pres.isopioidprescriber | title }}</span
+      >
     </div>
     <br />
-    <h3>Average amount of prescribed drug</h3>
+    <div class="btnBox">
+      <span class="btn">
+        <a href="{% url 'update' presid=pres.id%}">
+          <button class="btn btn-primary btn-custom-border text-uppercase">
+            Update
+          </button>
+        </a>
+      </span>
+      <span class="btn">
+        <a href="{% url 'updateCount' presid=pres.id%}">
+          <button class="btn btn-primary btn-custom-border text-uppercase">
+            Update Prescription Count
+          </button>
+        </a>
+      </span>
+      <span class="btn">
+        <a href="{% url 'delete' presid=pres.id%}"
+          ><button class="btn btn-primary btn-custom-border text-uppercase">
+            Delete
+          </button></a
+        >
+      </span>
+    </div>
+    <br />
+    <h3><b>Average amount of drugs prescribed</b></h3>
     <br />
     <table class="styled-table">
       <thead>
@@ -52,29 +79,6 @@
         {% endfor %}
       </tbody>
     </table>
-  </div>
-  <div class="btnBox">
-    <span class="btn">
-      <a href="{% url 'update' presid=pres.id%}">
-        <button class="btn btn-primary btn-custom-border text-uppercase">
-          Update
-        </button>
-      </a>
-    </span>
-    <span class="btn">
-      <a href="{% url 'updateCount' presid=pres.id%}">
-        <button class="btn btn-primary btn-custom-border text-uppercase">
-          Update Prescription Count
-        </button>
-      </a>
-    </span>
-    <span class="btn">
-      <a href="{% url 'delete' presid=pres.id%}"
-        ><button class="btn btn-primary btn-custom-border text-uppercase">
-          Delete
-        </button></a
-      >
-    </span>
   </div>
 </div>
 <!-- /.container -->
