@@ -1,8 +1,18 @@
 {% extends 'base.html' %}{%load static%} {%block content%}
+<nav class="nav_bar">
+  <!-- menu -->
+  <div class="menu_bar">
+      <a class="menu" href="{% url 'index' %}">HOME</a>
+      <a class="menu" href="{% url 'pres' %}">PRESCRIBER</a>
+      <a class="menu" href="{% url 'drug' %}">DRUG</a>
+      <a class="menu">ANALYSIS</a>
+  </div>
+</nav>
 
 <div class="container">
   <div class="cont">
     <h2>Drug Detail</h2>
+    <br><br>
     <div class="sub">
       <span>{{ drug.drugname }}</span>
       <span>{{ drug.isopioid }}</span>
