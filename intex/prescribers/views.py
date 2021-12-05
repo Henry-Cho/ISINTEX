@@ -82,7 +82,7 @@ def PresViewPage(req) :
 def PresDetailViewPage(req, id) :
     record = Prescriber.objects.get(id= id)
     
-    prescriber = Drugnpi.objects.get(id = id)   
+    prescriber = Drugnpi.objects.get(id = id) 
 
     newlist = prescriber.__dict__
 
@@ -95,9 +95,20 @@ def PresDetailViewPage(req, id) :
             continue
         if val == False :
             continue
-        # a = Triple.objects.filter(~Q(prescriberid = id))
+
         ab = Triple.objects.filter(drugname = key)
         ac = ab.aggregate(Avg('qty'))
+
+        drug = Drug.objects.all()
+
+        drug_real = ''
+        drug_id = ''
+
+        for i in drug :
+            if (i.drugname.lower().replace('.', '') == key) :
+                drug_real = i.drugname
+                drug_id = i.id
+                break
 
         key_name = ''
 
@@ -107,7 +118,7 @@ def PresDetailViewPage(req, id) :
         value = ac[key_name]
         round_val = round(value, 2)
         
-        arr1.append({"name": key, "avg": round_val})
+        arr1.append({"id": drug_id, "name": drug_real, "avg": round_val})
 
         total_count += val
     

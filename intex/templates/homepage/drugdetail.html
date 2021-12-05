@@ -16,7 +16,6 @@
 <div class="container">
   <div class="cont">
     <h2>Drug Detail</h2>
-    <br><br>
     <div class="sub">
       <span>{{ drug.drugname }}</span>
       <span>{{ drug.isopioid }}</span>
@@ -26,8 +25,7 @@
     <table class="styled-table">
       <thead>
         <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>Prescriber Name</th>
             <th>Credential</th>
             <th>Prescribed Quantity</th>
         </tr>
@@ -35,8 +33,7 @@
       <tbody>
       {% for p in prescriber %}
         <tr>
-            <td>{{ p.fname }}</td>
-            <td>{{ p.lname }}</td>
+            <td><a href="/prescribers/{{p.id}}">{{ p.fname }} {{ p.lname }}</a></td>
             <td>{{ p.credentials }}</td>
             <td>{{ p.drugqty }}</td>
         </tr>
