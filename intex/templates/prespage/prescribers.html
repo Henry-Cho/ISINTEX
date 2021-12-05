@@ -1,13 +1,22 @@
 {% extends 'base.html' %}{%load static%} {%block content%}
+<nav class="nav_bar">
+  <!-- menu -->
+  <div class="menu_bar">
+      <a class="menu" href="{% url 'index' %}">HOME</a>
+      <a class="menu" href="{% url 'pres' %}">PRESCRIBER</a>
+      <a class="menu" href="{% url 'drug' %}">DRUG</a>
+      <a class="menu">ANALYSIS</a>
+  </div>
+</nav>
 
 <div class="container">
   <div class="cont">
     <h2>Search Prescribers</h2>
-    <br />
+    <br><br>
     <div style="margin-bottom: 12px">
       <form name="form" method="get" action="{% url 'pressearch' %}">
         <label>First Name: </label>
-        <input id="search" type="text" name="search" />
+        <input id="search" type="text" name="search" autofocus/>
         <label>Last Name: </label>
         <input id="search1" type="text" name="search1" />
         <label>Gender: </label>

@@ -1250,10 +1250,46 @@ label {
 
 .pt-table.desktop-768 .pt-tablecell {
   padding-bottom: 110px;
-  padding-top: 60px;
+  padding-top: 150px;
 }
 .pt-table.desktop-768 .pt-tablecell .page-nav {
   bottom: 40px;
+}
+
+form {
+  color: black;
+}
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
 }
 
 /* =================================== */
@@ -1399,8 +1435,8 @@ label {
 
 .sub {
   width: 100%;
-  border: 1px solid black;
-  box-shadow: inset;
+  border: none;
+  box-shadow: 0 0.3rem 0.3rem #aaaaaa;
   border-radius: 20px;
   margin-bottom: 10px;
   padding: 8px 12px;
@@ -1418,6 +1454,53 @@ label {
 .btnBox {
   width: 100%;
   text-align: center;
+}
+
+.toTop {
+  position: fixed;
+  bottom: 50px;
+  right: 80px;
+  background-color: #00B7CE;
+  border: none;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 10px 0;
+  top: 0;
+  position: absolute;
+  z-index: 5;
+  background: #00B7CE;
+  color: white;
+  margin-bottom: 60px;
+}
+
+
+.menu_bar {
+  display: flex;
+}
+
+.menu {
+  width: 163.61px;
+  text-align: center;
+  cursor: pointer;
+  padding: 20px 20px;
+}
+
+.menu:hover {
+  background: white;
+  color: #00B7CE;
+  transition: all 200ms ease-in-out;
 }
 /*------------------------------------------------
 	Responsive Media Queries
