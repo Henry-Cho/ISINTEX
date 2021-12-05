@@ -2,43 +2,50 @@
 <nav class="nav_bar">
   <!-- menu -->
   <div class="menu_bar">
-      <a class="menu" href="{% url 'index' %}">HOME</a>
-      <a class="menu" href="{% url 'pres' %}">PRESCRIBER</a>
-      <a class="menu" href="{% url 'drug' %}">DRUG</a>
-      <a class="menu">ANALYSIS</a>
+    <a class="menu" href="{% url 'index' %}">HOME</a>
+    <a class="menu" href="{% url 'pres' %}">PRESCRIBER</a>
+    <a class="menu" href="{% url 'drug' %}">DRUG</a>
+    <a class="menu">ANALYSIS</a>
   </div>
 </nav>
-<button class="toTop" onclick="window.scrollTo({
+<button
+  class="toTop"
+  onclick="window.scrollTo({
   top: 0,
   left: 0,
   behavior: 'smooth'
-})">⬆</button>
+})"
+>
+  ⬆
+</button>
 <div class="container">
   <div class="cont">
     <h2><b> {{ drug.drugname }} </b></h2>
-    <br>
+    <br />
     <div class="sub">
       <span><b>Is Opioid:</b> {{ drug.isopioid }}</span>
     </div>
-    <br>
+    <br />
     <h3>Top 10 Prescriber List</h3>
     <table class="styled-table">
       <thead>
         <tr>
-            <th>Prescriber Name</th>
-            <th>Credential</th>
-            <th>Prescribed Quantity</th>
+          <th>Prescriber Name</th>
+          <th>Credential</th>
+          <th>Prescribed Quantity</th>
         </tr>
       </thead>
       <tbody>
-      {% for p in prescriber %}
+        {% for p in prescriber %}
         <tr>
-            <td><a href="/prescribers/{{p.id}}">{{ p.fname }} {{ p.lname }}</a></td>
-            <td>{{ p.credentials }}</td>
-            <td>{{ p.drugqty }}</td>
+          <td>
+            <a href="/prescribers/{{p.id}}">{{ p.fname }} {{ p.lname }}</a>
+          </td>
+          <td>{{ p.credentials }}</td>
+          <td>{{ p.drugqty }}</td>
         </tr>
-            <!-- and so on... -->
-      {% endfor %}
+        <!-- and so on... -->
+        {% endfor %}
       </tbody>
     </table>
   </div>

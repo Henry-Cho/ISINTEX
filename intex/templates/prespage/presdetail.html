@@ -2,21 +2,28 @@
 <nav class="nav_bar">
   <!-- menu -->
   <div class="menu_bar">
-      <a class="menu" href="{% url 'index' %}">HOME</a>
-      <a class="menu" href="{% url 'pres' %}">PRESCRIBER</a>
-      <a class="menu" href="{% url 'drug' %}">DRUG</a>
-      <a class="menu">ANALYSIS</a>
+    <a class="menu" href="{% url 'index' %}">HOME</a>
+    <a class="menu" href="{% url 'pres' %}">PRESCRIBER</a>
+    <a class="menu" href="{% url 'drug' %}">DRUG</a>
+    <a class="menu">ANALYSIS</a>
   </div>
 </nav>
-<button class="toTop" onclick="window.scrollTo({
+<button
+  class="toTop"
+  onclick="window.scrollTo({
   top: 0,
   left: 0,
   behavior: 'smooth'
-})">⬆</button>
+})"
+>
+  ⬆
+</button>
 <div class="container">
   <div class="cont">
     <h2>
-      <span><b>{{ pres.fname }} {{ pres.lname }}, {{ pres.credentials }}</b></span>
+      <span
+        ><b>{{ pres.fname }} {{ pres.lname }}, {{ pres.credentials }}</b></span
+      >
     </h2>
     <br />
     <div class="sub">
@@ -25,24 +32,24 @@
       <p>Specialty: {{ pres.specialty }}</p>
       <p>Total quantity of drug prescribed: {{ count }}</p>
     </div>
-    <br>
+    <br />
     <h3>Average amount of prescribed drug</h3>
-    <br>
+    <br />
     <table class="styled-table">
       <thead>
         <tr>
-            <th>Drug Name</th>
-            <th>Average Quantity</th>
+          <th>Drug Name</th>
+          <th>Average Quantity</th>
         </tr>
       </thead>
       <tbody>
-      {% for d in test%}
+        {% for d in test%}
         <tr>
-            <td><a href="/drugdetail/{{d.id}}">{{ d.name }}</a></td>
-            <td>{{ d.avg }}</td>
+          <td><a href="/drugdetail/{{d.id}}">{{ d.name }}</a></td>
+          <td>{{ d.avg }}</td>
         </tr>
-            <!-- and so on... -->
-      {% endfor %}
+        <!-- and so on... -->
+        {% endfor %}
       </tbody>
     </table>
   </div>
