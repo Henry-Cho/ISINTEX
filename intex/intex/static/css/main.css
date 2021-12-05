@@ -1469,6 +1469,10 @@ tbody tr:hover {
   cursor: pointer;
 }
 
+body {
+  font-family: "Open Sans", sans-serif !important;
+}
+
 .cont {
   margin-top: 100px;
   padding: 16px 20px;
