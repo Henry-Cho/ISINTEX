@@ -1,0 +1,203 @@
+{%extends 'base.html'%}{%load static%}{%block content%}
+<nav class="nav_bar">
+  <!-- menu -->
+  <div class="menu_bar">
+    <a class="menu" href="{% url 'index' %}">HOME</a>
+    <a class="menu" href="{% url 'pres' %}">PRESCRIBER</a>
+    <a class="menu" href="{% url 'drug' %}">DRUG</a>
+    <a class="menu" href="{% url 'analysis' %}">ANALYSIS</a>
+  </div>
+</nav>
+<br /><br /><br />
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+      <div class="page-title text-center">
+        <br />
+        <h2>Analysis</h2>
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <!--Numbers of Opioid Drugs Prescribed-->
+  <div
+    class="tableauPlaceholder"
+    id="viz1638747426296"
+    style="position: relative"
+  >
+    <noscript
+      ><a href="#"
+        ><img
+          alt="Numbers of Opioid Drugs Prescribed "
+          src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Op&#47;OpioidDrugsNumbers&#47;NumbersOfOpioidDrugsPrescribed&#47;1_rss.png"
+          style="border: none" /></a></noscript
+    ><object class="tableauViz" style="display: none">
+      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+      <param name="embed_code_version" value="3" />
+      <param name="site_root" value="" />
+      <param
+        name="name"
+        value="OpioidDrugsNumbers&#47;NumbersOfOpioidDrugsPrescribed"
+      />
+      <param name="tabs" value="no" />
+      <param name="toolbar" value="yes" />
+      <param
+        name="static_image"
+        value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Op&#47;OpioidDrugsNumbers&#47;NumbersOfOpioidDrugsPrescribed&#47;1.png"
+      />
+      <param name="animate_transition" value="yes" />
+      <param name="display_static_image" value="yes" />
+      <param name="display_spinner" value="yes" />
+      <param name="display_overlay" value="yes" />
+      <param name="display_count" value="yes" />
+      <param name="language" value="ko-KR" />
+      <param name="filter" value="publish=yes" />
+    </object>
+  </div>
+  <script type="text/javascript">
+    var divElement = document.getElementById("viz1638747426296");
+    var vizElement = divElement.getElementsByTagName("object")[0];
+    vizElement.style.width = "100%";
+    vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+    var scriptElement = document.createElement("script");
+    scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+  </script>
+  <br />
+  <!--DeathByStates-->
+  <div
+    class="tableauPlaceholder"
+    id="viz1638747713475"
+    style="position: relative"
+  >
+    <noscript
+      ><a href="#"
+        ><img
+          alt="Opioid Related Death (number and percentage) "
+          src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;De&#47;DeathByStates&#47;DeathByStates&#47;1_rss.png"
+          style="border: none" /></a></noscript
+    ><object class="tableauViz" style="display: none">
+      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+      <param name="embed_code_version" value="3" />
+      <param name="site_root" value="" />
+      <param name="name" value="DeathByStates&#47;DeathByStates" />
+      <param name="tabs" value="no" />
+      <param name="toolbar" value="yes" />
+      <param
+        name="static_image"
+        value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;De&#47;DeathByStates&#47;DeathByStates&#47;1.png"
+      />
+      <param name="animate_transition" value="yes" />
+      <param name="display_static_image" value="yes" />
+      <param name="display_spinner" value="yes" />
+      <param name="display_overlay" value="yes" />
+      <param name="display_count" value="yes" />
+      <param name="language" value="ko-KR" />
+    </object>
+  </div>
+  <script type="text/javascript">
+    var divElement = document.getElementById("viz1638747713475");
+    var vizElement = divElement.getElementsByTagName("object")[0];
+    vizElement.style.width = "100%";
+    vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+    var scriptElement = document.createElement("script");
+    scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+  </script>
+  <br />
+  <!--OpioidPrescribersTotalPrescriptions-->
+  <div
+    class="tableauPlaceholder"
+    id="viz1638747802493"
+    style="position: relative"
+  >
+    <noscript
+      ><a href="#"
+        ><img
+          alt="Opioid Prescribers Total Prescriptions "
+          src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Op&#47;OpioidPrescribersTotalPrescriptions&#47;Sheet5&#47;1_rss.png"
+          style="border: none" /></a></noscript
+    ><object class="tableauViz" style="display: none">
+      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+      <param name="embed_code_version" value="3" />
+      <param name="site_root" value="" />
+      <param
+        name="name"
+        value="OpioidPrescribersTotalPrescriptions&#47;Sheet5"
+      />
+      <param name="tabs" value="no" />
+      <param name="toolbar" value="yes" />
+      <param
+        name="static_image"
+        value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Op&#47;OpioidPrescribersTotalPrescriptions&#47;Sheet5&#47;1.png"
+      />
+      <param name="animate_transition" value="yes" />
+      <param name="display_static_image" value="yes" />
+      <param name="display_spinner" value="yes" />
+      <param name="display_overlay" value="yes" />
+      <param name="display_count" value="yes" />
+      <param name="language" value="ko-KR" />
+      <param name="filter" value="publish=yes" />
+    </object>
+  </div>
+  <script type="text/javascript">
+    var divElement = document.getElementById("viz1638747802493");
+    var vizElement = divElement.getElementsByTagName("object")[0];
+    vizElement.style.width = "100%";
+    vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+    var scriptElement = document.createElement("script");
+    scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+  </script>
+  <br />
+  <!--Largest Numbers of Specific Drugs Prescribed-->
+  <div
+    class="tableauPlaceholder"
+    id="viz1638747930246"
+    style="position: relative"
+  >
+    <noscript
+      ><a href="#"
+        ><img
+          alt="Largest Numbers of Specific Drugs Prescribed "
+          src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;La&#47;LargestNumbersofSpecificDrugsPrescribed&#47;NumberofSpecificDrugsBeenPrescribed&#47;1_rss.png"
+          style="border: none" /></a></noscript
+    ><object class="tableauViz" style="display: none">
+      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+      <param name="embed_code_version" value="3" />
+      <param name="site_root" value="" />
+      <param
+        name="name"
+        value="LargestNumbersofSpecificDrugsPrescribed&#47;NumberofSpecificDrugsBeenPrescribed"
+      />
+      <param name="tabs" value="no" />
+      <param name="toolbar" value="yes" />
+      <param
+        name="static_image"
+        value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;La&#47;LargestNumbersofSpecificDrugsPrescribed&#47;NumberofSpecificDrugsBeenPrescribed&#47;1.png"
+      />
+      <param name="animate_transition" value="yes" />
+      <param name="display_static_image" value="yes" />
+      <param name="display_spinner" value="yes" />
+      <param name="display_overlay" value="yes" />
+      <param name="display_count" value="yes" />
+      <param name="language" value="ko-KR" />
+      <param name="filter" value="publish=yes" />
+    </object>
+  </div>
+  <script type="text/javascript">
+    var divElement = document.getElementById("viz1638747930246");
+    var vizElement = divElement.getElementsByTagName("object")[0];
+    vizElement.style.width = "100%";
+    vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+    var scriptElement = document.createElement("script");
+    scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+  </script>
+  <!-- /.col- -->
+  <!-- /.row -->
+</div>
+<!-- /.container -->
+{%endblock%}

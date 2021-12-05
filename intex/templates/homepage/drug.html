@@ -5,7 +5,7 @@
         <a class="menu" href="{% url 'index' %}">HOME</a>
         <a class="menu" href="{% url 'pres' %}">PRESCRIBER</a>
         <a class="menu" href="{% url 'drug' %}">DRUG</a>
-        <a class="menu">ANALYSIS</a>
+        <a class="menu" href="{% url 'analysis' %}">ANALYSIS</a>
     </div>
 </nav>
 <button class="toTop" onclick="window.scrollTo({
@@ -18,9 +18,9 @@
         <h2>Drug List</h2>
         <div style="margin-bottom: 12px;">
             <form id="form_drug" name="form" method="get" action="{% url 'drugsearch' %}" >
-                <label>Search Medicine: </label>
+                <label>Search Drug: </label>
                 <input id='search' type="text" name="search" autofocus> 
-                <label for='filter'>Filter Opioid</label>
+                <label for='filter'>Opioid: </label>
                 <input id= 'filter' type="checkbox" name='filter'>
                 <button type="submit" class="btn btn-primary">Search</button>
             </form>
@@ -29,7 +29,6 @@
         <a href= '/drugdetail/{{d.id}}'>
             <div class="sub main">
                 <span>{{ d.drugname }}</span>
-                <span>{{ d.isopioid }}</span>
             </div>
         </a>
         {% endfor %}

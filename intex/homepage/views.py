@@ -70,6 +70,9 @@ def searchDrug(req):
 
     return render(req, 'homepage/drugsearch.html', context)
 
+def analysisPageView(req):
+    return render(req, 'homepage/analysis.html')
+
 # def searchEmpPageView(request) :
 #     sFirst = request.GET['first_name']
 #     sLast = request.GET['last_name']
