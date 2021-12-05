@@ -272,7 +272,7 @@ class Prescriber(models.Model):
     zolpidemtartrate	=	 models.IntegerField(default=0)
 
     class Meta:
-        db_table = "pd_prescriber"
+        db_table = "pd_prescribers"
     
 
     

@@ -1,13 +1,26 @@
 {% extends 'base.html' %}{%load static%} {%block content%}
-
+<nav class="nav_bar">
+  <!-- menu -->
+  <div class="menu_bar">
+      <a class="menu" href="{% url 'index' %}">HOME</a>
+      <a class="menu" href="{% url 'pres' %}">PRESCRIBER</a>
+      <a class="menu" href="{% url 'drug' %}">DRUG</a>
+      <a class="menu">ANALYSIS</a>
+  </div>
+</nav>
+<button class="toTop" onclick="window.scrollTo({
+  top: 0,
+  left: 0,
+  behavior: 'smooth'
+})">⬆</button>
 <div class="container">
   <div class="cont">
     <h2>Search results: {{ count.count }}</h2>
+    <br><br>
     {% for d in drug%}
     <a href="/prescribers/{{d.id}}">
-      <div class="sub">
-        <span>{{ d.fname }}</span>
-        <span>{{ d.lname }}</span>
+      <div class="sub main">
+        <span>{{ d.fname }} {{ d.lname }}, {{ d.credentials }}</span>
       </div>
     </a>
     {% endfor %}

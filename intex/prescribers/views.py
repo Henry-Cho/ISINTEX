@@ -1,4 +1,3 @@
-from django.db.models.aggregates import Count
 from django.http import request
 from django.shortcuts import render
 from django.apps import apps
@@ -8,6 +7,7 @@ from django.db.models import Q
 Prescriber = apps.get_model('homepage', 'Prescriber')
 Drugnpi = apps.get_model('homepage', 'Drugnpi')
 Triple = apps.get_model('homepage', 'Triple')
+Drug = apps.get_model('homepage', 'Drug')
 
 # Create your views here.
 def newPageView(request) :
@@ -355,25 +355,36 @@ def PresDetailViewPage(req, id) :
     total_count = 0
 
     for key,val in newlist.items():
-        if val != False :
-            if key == '_state' or key == 'id' :
-                continue
+        if key == '_state' or key == 'id' :
+            continue
+        if val == False :
+            continue
 
-            a = Triple.objects.filter(~Q(prescriberid = id, qty = 0))
-            ab = a.filter(drugname = key)
-            ac = ab.aggregate(Avg('qty'))
+        ab = Triple.objects.filter(drugname = key)
+        ac = ab.aggregate(Avg('qty'))
 
-            key_name = ''
+        drug = Drug.objects.all()
 
-            for a in ac.keys() :
-                key_name = a
+        drug_real = ''
+        drug_id = ''
 
-            value = ac[key_name]
-            round_val = round(value, 2)
-            
-            arr1.append({"name": key, "avg": round_val})
-    
-            total_count += val
+        for i in drug :
+            if (i.drugname.lower().replace('.', '') == key) :
+                drug_real = i.drugname
+                drug_id = i.id
+                break
+
+        key_name = ''
+
+        for a in ac.keys() :
+            key_name = a
+
+        value = ac[key_name]
+        round_val = round(value, 2)
+        
+        arr1.append({"id": drug_id, "name": drug_real, "avg": round_val})
+
+        total_count += val
     
     context = {
         'pres': record,

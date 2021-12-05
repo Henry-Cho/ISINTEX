@@ -1,20 +1,53 @@
 {% extends 'base.html' %}{%load static%} {%block content%}
-
+<nav class="nav_bar">
+  <!-- menu -->
+  <div class="menu_bar">
+    <a class="menu" href="{% url 'index' %}">HOME</a>
+    <a class="menu" href="{% url 'pres' %}">PRESCRIBER</a>
+    <a class="menu" href="{% url 'drug' %}">DRUG</a>
+    <a class="menu">ANALYSIS</a>
+  </div>
+</nav>
+<button
+  class="toTop"
+  onclick="window.scrollTo({
+  top: 0,
+  left: 0,
+  behavior: 'smooth'
+})"
+>
+  ⬆
+</button>
 <div class="container">
   <div class="cont">
-    <h2>Drug Details</h2>
+    <h2><b> {{ drug.drugname }} </b></h2>
+    <br />
     <div class="sub">
-      <h3>{{ drug.drugname }}</h3>
-      <p>Opioid: {{ drug.isopioid }}</p>
+      <span><b>Is Opioid:</b> {{ drug.isopioid }}</span>
     </div>
-
-    <h2>Top 10 Prescriber List and Count Prescribed</h2>
-    {% for p in prescriber %}
-    <p>
-      {{p.fname}} {{p.lname}} {{p.credentials}} -
-      <b>{{p.drugqty }}</b>
-    </p>
-    {% endfor %}
+    <br />
+    <h3>Top 10 Prescriber List</h3>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Prescriber Name</th>
+          <th>Credential</th>
+          <th>Prescribed Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in prescriber %}
+        <tr>
+          <td>
+            <a href="/prescribers/{{p.id}}">{{ p.fname }} {{ p.lname }}</a>
+          </td>
+          <td>{{ p.credentials }}</td>
+          <td>{{ p.drugqty }}</td>
+        </tr>
+        <!-- and so on... -->
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 </div>
 <!-- /.container -->
