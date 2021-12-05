@@ -1282,6 +1282,7 @@ form {
 
 .styled-table tbody tr {
   border-bottom: 1px solid #dddddd;
+  color: #07080b;
 }
 
 .styled-table tbody tr:nth-of-type(even) {
@@ -1445,7 +1446,7 @@ form {
 }
 
 .cont {
-  padding: 16px;
+  padding: 200px 16px 16px;
   background-color: white;
   border-radius: 20px;
   opacity: 0.6;
