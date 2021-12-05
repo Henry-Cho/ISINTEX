@@ -93,9 +93,10 @@ def PresDetailViewPage(req, id) :
     for key,val in newlist.items():
         if key == '_state' or key == 'id' :
             continue
-
-        a = Triple.objects.filter(~Q(prescriberid = id))
-        ab = a.filter(drugname = key)
+        if val == False :
+            continue
+        # a = Triple.objects.filter(~Q(prescriberid = id))
+        ab = Triple.objects.filter(drugname = key)
         ac = ab.aggregate(Avg('qty'))
 
         key_name = ''
