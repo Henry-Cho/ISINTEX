@@ -1446,7 +1446,8 @@ form {
 }
 
 .cont {
-  padding: 200px 16px 16px;
+  margin-top: 100px;
+  padding: 16px 20px;
   background-color: white;
   border-radius: 20px;
   opacity: 0.6;
@@ -1470,6 +1471,12 @@ form {
   border-radius: 50%;
   cursor: pointer;
   z-index: 1000;
+  opacity: 0;
+}
+
+.toTop:hover {
+  transform: scale(1.1);
+  transition: all 0.2ms ease-in-out;
 }
 
 nav {

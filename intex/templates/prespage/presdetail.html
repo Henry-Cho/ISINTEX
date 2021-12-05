@@ -40,7 +40,7 @@
       <tbody>
       {% for d in test%}
         <tr>
-            <td>{{ d.name }}</td>
+            <td><a href="/drugdetail/{{d.id}}">{{ d.name }}</a></td>
             <td>{{ d.avg }}</td>
         </tr>
             <!-- and so on... -->
