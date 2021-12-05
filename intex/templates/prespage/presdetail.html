@@ -26,9 +26,23 @@
     <br>
     <h3>Average amount of prescribed drug</h3>
     <br>
-    {% for d in test %}
-    <p>{{ d.name }} {{ d.avg }}</p>
-    {% endfor %}
+    <table class="styled-table">
+      <thead>
+        <tr>
+            <th>Drug Name</th>
+            <th>Average Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for d in test%}
+        <tr>
+            <td>{{ d.name }}</td>
+            <td>{{ d.avg }}</td>
+        </tr>
+            <!-- and so on... -->
+      {% endfor %}
+      </tbody>
+    </table>
   </div>
   <div class="btnBox">
     <span class="btn">

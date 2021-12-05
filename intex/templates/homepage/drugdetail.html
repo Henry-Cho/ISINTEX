@@ -19,9 +19,27 @@
     </div>
 
     <h2>Top 10 Prescriber List</h2>
-    {% for p in prescriber %}
-    <p>{{p.fname}} {{p.lname}} {{p.credentials}} {{p.drugqty }}</p>
-    {% endfor %}
+    <table class="styled-table">
+      <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Credential</th>
+            <th>Prescribed Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for p in prescriber %}
+        <tr>
+            <td>{{ p.fname }}</td>
+            <td>{{ p.lname }}</td>
+            <td>{{ p.credentials }}</td>
+            <td>{{ p.drugqty }}</td>
+        </tr>
+            <!-- and so on... -->
+      {% endfor %}
+      </tbody>
+    </table>
   </div>
 </div>
 <!-- /.container -->

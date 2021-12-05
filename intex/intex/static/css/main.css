@@ -1270,7 +1270,7 @@ form {
 }
 
 .styled-table thead tr {
-  background-color: #009879;
+  background-color: #00B7CE;
   color: #ffffff;
   text-align: left;
 }
@@ -1289,7 +1289,7 @@ form {
 }
 
 .styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
+  border-bottom: 2px solid #00B7CE;
 }
 
 /* =================================== */
