@@ -22,7 +22,7 @@ def drugDetailViewPage(req, id) :
 
     drugName = record.drugname.lower().replace('.', '')
 
-    sQuery = f'SELECT id, fname, lname, credentials, {drugName} AS drugqty FROM pd_prescriber '
+    sQuery = f'SELECT id, fname, lname, credentials, {drugName} AS drugqty FROM pd_prescribers '
 
     if (drugName != '') :
         sQuery += f'ORDER BY drugqty DESC LIMIT 10;'

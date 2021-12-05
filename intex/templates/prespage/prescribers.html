@@ -20,19 +20,19 @@
     <div style="margin-bottom: 12px">
       <form name="form" method="get" action="{% url 'pressearch' %}">
         <label>First Name: </label>
-        <input id="search" type="text" name="search" autofocus/>
+        <input id="search1" type="text" name="search" autofocus/>
         <label>Last Name: </label>
-        <input id="search1" type="text" name="search1" />
+        <input id="search2" type="text" name="search1" />
         <label>Gender: </label>
-        <select id="search2" name="search2">
+        <select id="search3" name="search2">
           <option value="">(Any)</option>
           <option value="M">Male</option>
           <option value="F">Female</option></select
         ><br />
         <label>Credentials: </label>
-        <input id="search3" type="text" name="search3" />
+        <input id="search4" type="text" name="search3" />
         <label>State:</label>
-        <select id="search4" name="search4">
+        <select id="search5" name="search4">
           <option value="">(Any)</option>
           <option value="AL">Alabama</option>
           <option value="AK">Alaska</option>
@@ -87,14 +87,14 @@
           <option value="WY">Wyoming</option>
         </select>
         <label>Specialty: </label>
-        <input id="search5" type="text" name="search5" />
+        <input id="search6" type="text" name="search5" />
 
-        <button type="submit" class="btn btn-primary">Search</button>
+        <button id= 'presearch'type="submit" class="btn btn-primary">Search</button>
       </form>
     </div>
     {% for d in preslist%}
     <a href="/prescribers/{{d.id}}">
-      <div class="sub">
+      <div class="sub main">
         <span>{{ d.fname }}</span>
         <span>{{ d.lname }}</span>
         <span>{{ d.credentials }}</span>
