@@ -1262,7 +1262,7 @@ form {
 
 .styled-table {
   border-collapse: collapse;
-  margin: 25px 0;
+  margin: auto;
   font-size: 0.9em;
   font-family: sans-serif;
   min-width: 400px;
@@ -1474,13 +1474,6 @@ body {
 }
 
 .cont {
-  margin-top: 100px;
-  padding: 16px 20px;
-  background-color: white;
-  border-radius: 20px;
-  opacity: 0.6;
-}
-.cont2 {
   margin-top: 100px;
   padding: 16px 20px;
   background-color: white;
