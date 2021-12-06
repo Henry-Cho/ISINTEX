@@ -43,13 +43,14 @@
     </div>
 
     <main class="site-wrapper">
-        <div class="pt-table">
+        <div class="pt-table" style="background-image:url('https://user-images.githubusercontent.com/77369674/144374620-3e685d5b-851a-4299-a565-4a60f4ac84e6.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+          {%block content%}{%endblock%}
           <div
             class="pt-tablecell page-home relative"
-            style="background-image:url('https://user-images.githubusercontent.com/77369674/144374620-3e685d5b-851a-4299-a565-4a60f4ac84e6.jpg');"
           >
-    {%block content%}{%endblock%}
-</main>
+          </div>
+        </div>
+   </main>
     <!-- ================================
         JavaScript Libraries
         ================================= -->
@@ -62,5 +63,5 @@
     <script src="{% static 'js/jquery-validation.min.js'%}"></script>
     <script src="{% static 'js/form.min.js'%}"></script>
     <script src="{% static 'js/main.js'%}"></script>
-
+      </body>
 </html>
