@@ -8,8 +8,17 @@
     <a class="menu" href="{% url 'analysis' %}">ANALYSIS</a>
   </div>
 </nav>
-
-<div class="container">
+<button
+  class="toTop"
+  onclick="window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  })"
+>
+  ⬆
+</button>
+<div class="container analysis">
   <div class="row">
     <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
       <div class="page-title text-center">
@@ -198,5 +207,6 @@
   <!-- /.col- -->
   <!-- /.row -->
 </div>
+<br><br><br><br>
 <!-- /.container -->
 {%endblock%}
