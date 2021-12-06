@@ -55,7 +55,7 @@
         <a href="{% url 'delete' presid=pres.id%}"
           ><button
             class="btn btn-primary btn-custom-border text-uppercase"
-            onclick="return confirm('Are you sure?')"
+            onclick="return confirm('Are you sure you want to delete {{pres.fname}} {{pres.lname}}?')"
           >
             Delete
           </button></a

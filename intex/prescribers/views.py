@@ -292,7 +292,7 @@ def newPresCreate(req):
         newPres1.save()
 
 
-        return PresViewPage(req)
+        return PresDetailViewPage(req, newPres.id)
     else:
         data = Prescriber.objects.all()
         context = {
