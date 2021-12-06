@@ -34,7 +34,7 @@ def newPresCreate(req):
 
         newPres2.id = newPres.id
         newPres2.prescriberid = newPres.id
-        newPres2.drugname = "abilify"
+        newPres2.drugname = "zetia"
         newPres2.qty = 0
         newPres2.save()
 

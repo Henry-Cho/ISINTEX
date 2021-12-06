@@ -911,6 +911,15 @@ label {
 
 .col-md-offset-1 {
   margin-left: 0 !important;
+  padding-top: 150px;
+}
+
+.col-xs-12.col-md-offset-1.col-md-10.col-lg-offset-2.col-lg-8 {
+  padding-top: 0;
+}
+
+.col-xs-12.col-md-offset-1.col-md-10.col-lg-offset-2.col-lg-8.index {
+  padding-top: 150px;
 }
 
 .service-hex:hover {
@@ -1474,11 +1483,10 @@ body {
 }
 
 .cont {
-  margin-top: 100px;
   padding: 16px 20px;
   background-color: white;
   border-radius: 20px;
-  opacity: 1;
+  opacity: 0.9;
 }
 
 .btnBox {
@@ -1514,11 +1522,17 @@ nav {
   position: relative;
   padding: 10px 0;
   top: 0;
-  position: absolute;
+  position: sticky;
   z-index: 5;
   background: #1e2530;
   color: white;
   margin-bottom: 60px;
+}
+
+nav.navbar--dark {
+  padding: 20px 0;
+  background-color: #0d1014;
+  transition: all 200ms ease-in-out;
 }
 
 .menu_bar {
