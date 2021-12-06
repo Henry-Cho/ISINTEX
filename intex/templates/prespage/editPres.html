@@ -1,4 +1,14 @@
 {%extends 'base.html'%}{%load static%}{%block content%}
+<nav class="nav_bar">
+  <!-- menu -->
+  <div class="menu_bar">
+    <a class="menu" href="{% url 'index' %}">HOME</a>
+    <a class="menu" href="{% url 'pres' %}">PRESCRIBER</a>
+    <a class="menu" href="{% url 'drug' %}">DRUG</a>
+    <a class="menu" href="{% url 'analysis' %}">ANALYSIS</a>
+  </div>
+</nav>
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
@@ -160,7 +170,6 @@
           <button
             type="submit"
             class="btn btn-primary btn-custom-border text-uppercase"
-            onclick="formcheck(); return false"
           >
             Update
           </button>

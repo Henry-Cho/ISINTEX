@@ -22,7 +22,7 @@ def drugDetailViewPage(req, id) :
 
     drugName = record.drugname.lower().replace('.', '')
 
-    sQuery = f'SELECT id, fname, lname, credentials, {drugName} AS drugqty FROM pd_prescriber '
+    sQuery = f'SELECT id, fname, lname, credentials, {drugName} AS drugqty FROM pd_prescribers '
 
     if (drugName != '') :
         sQuery += f'ORDER BY drugqty DESC LIMIT 10;'
@@ -69,6 +69,9 @@ def searchDrug(req):
     }
 
     return render(req, 'homepage/drugsearch.html', context)
+
+def analysisPageView(req):
+    return render(req, 'homepage/analysis.html')
 
 # def searchEmpPageView(request) :
 #     sFirst = request.GET['first_name']

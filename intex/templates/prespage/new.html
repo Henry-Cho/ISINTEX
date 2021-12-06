@@ -1,8 +1,19 @@
 {%extends 'base.html'%}{%load static%}{%block content%}
+<nav class="nav_bar">
+  <!-- menu -->
+  <div class="menu_bar">
+    <a class="menu" href="{% url 'index' %}">HOME</a>
+    <a class="menu" href="{% url 'pres' %}">PRESCRIBER</a>
+    <a class="menu" href="{% url 'drug' %}">DRUG</a>
+    <a class="menu" href="{% url 'analysis' %}">ANALYSIS</a>
+  </div>
+</nav>
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
       <div class="page-title text-center">
+        <br />
         <h2>Register a New <span class="primary">Prescriber</span></h2>
         <p>Fill out the information below to register a new prescriber.</p>
       </div>
@@ -157,6 +168,7 @@
         </div>
         <br />
         <!-- ./col- -->
+        {% comment %}
         <div class="col-lg-12 col-lg-12">
           <div class="input-field">
             <input
@@ -170,15 +182,10 @@
           </div>
         </div>
         <br />
+        {% endcomment %}
         <!-- ./col- -->
         <span class="btn">
-          <button
-            type="submit"
-            class="btn btn-primary"
-            onclick="formcheck(); return false"
-          >
-            Create
-          </button>
+          <button type="submit" class="btn btn-primary">Create</button>
         </span>
         <!-- ./col- -->
       </form>

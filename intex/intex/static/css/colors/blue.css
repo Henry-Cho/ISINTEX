@@ -2,11 +2,11 @@
  * Selection color
  */
 ::-moz-selection {
-  background-color: #02B7CE;
+  background-color: #1E2530;
 }
 
 ::selection {
-  background-color: #02B7CE;
+  background-color: #1E2530;
 }
 
 /* background color */
@@ -17,11 +17,11 @@
 .hexagon-item:hover .hex-item div::after,
 .progress .bar,
 .contact-social li:hover span {
-  background-color: #02B7CE;
+  background-color: #1E2530;
 }
 
 .nicescroll-cursors {
-  background: #02B7CE !important;
+  background: #1E2530 !important;
 }
 
 /* color */
@@ -30,30 +30,30 @@
 .filter .active,
 .works-item h4,
 .msg-success {
-  color: #02B7CE;
+  color: #1E2530;
 }
 
 /* border color */
 .testimonials .owl-dot.active {
-  border-color: #02B7CE;
+  border-color: #1E2530;
 }
 
 /* border top color */
 .site-wrapper,
 .contact-social li:hover span::after,
 .contact-social-hex:hover::before {
-  border-top-color: #02B7CE;
+  border-top-color: #1E2530;
 }
 
 /* border bottom color */
 .filter .active,
 .contact-social li:hover span::before,
 .contact-social-hex:hover::after {
-  border-bottom-color: #02B7CE;
+  border-bottom-color: #1E2530;
 }
 
 /* fill color */
 .service-hex:hover .fill,
 .service-hex:hover .st1 {
-  fill: #02B7CE;
+  fill: #1E2530;
 }

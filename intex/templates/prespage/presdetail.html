@@ -1,51 +1,85 @@
 {% extends 'base.html' %}{%load static%} {%block content%}
-
-<div class="container">
-  <h2>
-    <span>{{ pres.fname }}</span> <span>{{ pres.lname }}</span
-    ><span>, {{ pres.credentials }}</span>
-  </h2>
-  <br />
-  <div class="sub">
-    <h3>Prescriber Details:</h3>
-    <p>Gender: {{ pres.gender }}</p>
-    <p>Location: {{ pres.state }}</p>
-    <p>Specialty: {{ pres.specialty }}</p>
+<nav class="nav_bar">
+  <!-- menu -->
+  <div class="menu_bar">
+    <a class="menu" href="{% url 'index' %}">HOME</a>
+    <a class="menu" href="{% url 'pres' %}">PRESCRIBER</a>
+    <a class="menu" href="{% url 'drug' %}">DRUG</a>
+    <a class="menu" href="{% url 'analysis' %}">ANALYSIS</a>
   </div>
-<<<<<<< HEAD
-  <h3>Total quantity of drug prescribed: {{ count }}</h3>
-  {% for d in test %}
-  <p>{{ d.name }} {{ d.avg }}</p>
-=======
-
-  <p>{% for l in len %}{{l}}{% endfor %}</p>
-  {% for d in drug %}
-  <p>{{ d }}</p>
->>>>>>> 80c9f0f6a4dd8abb76eb8ed2369d4002723e27ea
-  {% endfor %}
-</div>
-<div class="btnBox">
-  <span class="btn">
-    <a href="{% url 'update' presid=pres.id%}">
-      <button class="btn btn-primary btn-custom-border text-uppercase">
-        Update
-      </button>
-    </a>
-  </span>
-  <span class="btn">
-    <a href="{% url 'updateCount' presid=pres.id%}">
-      <button class="btn btn-primary btn-custom-border text-uppercase">
-        Update Prescription Count
-      </button>
-    </a>
-  </span>
-  <span class="btn">
-    <a href="{% url 'delete' presid=pres.id%}"
-      ><button class="btn btn-primary btn-custom-border text-uppercase">
-        Delete
-      </button></a
-    >
-  </span>
+</nav>
+<button
+  class="toTop"
+  onclick="window.scrollTo({
+  top: 0,
+  left: 0,
+  behavior: 'smooth'
+})"
+>
+  ⬆
+</button>
+<div class="container">
+  <div class="cont">
+    <h2>
+      <span
+        ><b>{{ pres.fname }} {{ pres.lname }}, {{ pres.credentials }}</b></span
+      >
+    </h2>
+    <br />
+    <div class="sub">
+      <span><b>Gender:</b> {{ pres.gender }} | </span>
+      <span><b>Location:</b> {{ pres.state }} | </span>
+      <span><b>Specialty:</b> {{ pres.specialty }} | </span>
+      <span><b>Total quantity of prescribed drugs: </b>{{presCount}} | </span>
+      <span
+        ><b>Prescribes Opioids:</b> {{ pres.isopioidprescriber | title }}</span
+      >
+    </div>
+    <br />
+    <div class="btnBox">
+      <span class="btn">
+        <a href="{% url 'update' presid=pres.id%}">
+          <button class="btn btn-primary btn-custom-border text-uppercase">
+            Update
+          </button>
+        </a>
+      </span>
+      <span class="btn">
+        <a href="{% url 'updateCount' presid=pres.id%}">
+          <button class="btn btn-primary btn-custom-border text-uppercase">
+            Update Prescription Count
+          </button>
+        </a>
+      </span>
+      <span class="btn">
+        <a href="{% url 'delete' presid=pres.id%}"
+          ><button class="btn btn-primary btn-custom-border text-uppercase">
+            Delete
+          </button></a
+        >
+      </span>
+    </div>
+    <br />
+    <h3><b>Average amount of drugs prescribed</b></h3>
+    <br />
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Drug Name</th>
+          <th>Average Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for d in test%}
+        <tr>
+          <td><a href="/drugdetail/{{d.id}}">{{ d.name }}</a></td>
+          <td>{{ d.avg }}</td>
+        </tr>
+        <!-- and so on... -->
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </div>
 <!-- /.container -->
 {% endblock %}
