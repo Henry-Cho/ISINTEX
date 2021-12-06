@@ -29,13 +29,13 @@ def newPresCreate(req):
         newPres.credentials = req.POST.get("credentials")
         newPres.specialty = req.POST.get("specialty")
         newPres.isopioidprescriber = req.POST.get("isopioidprescriber")
-        newPres.totalprescriptions = req.POST.get("totalprescriptions")
+        newPres.totalprescriptions = 0
         newPres.save()
 
         newPres2.id = newPres.id
         newPres2.prescriberid = newPres.id
         newPres2.drugname = "abilify"
-        newPres2.qty = req.POST.get("totalprescriptions")
+        newPres2.qty = 0
         newPres2.save()
 
         newPres1.id = newPres.id
