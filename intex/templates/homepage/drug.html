@@ -33,15 +33,9 @@
         </a>
         {% endfor %}
     </div>
-    {% for d in druglist%}
-    <a href="/drugdetail/{{d.id}}">
-      <div class="sub">
-        <span>{{ d.drugname }} | </span>
-        <span>Opioid: {{ d.isopioid }}</span>
-      </div>
-    </a>
-    {% endfor %}
   </div>
+  <br>
+  <br>
 </div>
 <!-- /.container -->
 {% endblock %}

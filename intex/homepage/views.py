@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.apps import apps
 from .models import Drug, Prescriber
+from django.db.models import Avg
 
-# Drug = apps.get_model('homepage','Drug')
+Drugnpi = apps.get_model('homepage','Drugnpi')
+Triple = apps.get_model('homepage','Triple')
 
 # Create your views here.
 def indexPageView(request) :
@@ -73,22 +75,19 @@ def searchDrug(req):
 def analysisPageView(req):
     return render(req, 'homepage/analysis.html')
 
-# def searchEmpPageView(request) :
-#     sFirst = request.GET['first_name']
-#     sLast = request.GET['last_name']
-#     sGrade_Level = request.GET['grade_level']
-#     sQuery = 'SELECT Student.id, first_name, last_name, description FROM Student, Grade_Level WHERE Student.class_level_id = Grade_Level.class_level'
-#     if sFirst != '' :
-#         sQuery += " AND first_name = '" + sFirst + "'"
-#     if sLast != '' :
-#         sQuery += " AND last_name = '" + sLast + "'"
-#     if sGrade_Level != '' :
-#         sQuery += " AND class_level_id = '" + sGrade_Level + "'"        
-#     sQuery += ' ORDER BY first_name, last_name, description'
-#     data = Student.objects.raw(sQuery)
-#     lookup = Grade_Level.objects.all()
-#     context = {
-#         "our_students" : data,
-#         "grades" : lookup,
-#     }
-#     return render(request, 'travelpages/displayStudents.html', context) 
+def searchState(req, state) :
+    data = Prescriber.objects.filter(state=state)
+    print(data)
+    count = 0
+    for d in data :
+        count += 1
+    
+    obj = {
+        "count": count
+    }
+    
+    context = {
+        'drug': data,
+        'count': obj
+    }
+    return render(req, 'prespage/search.html', context)
