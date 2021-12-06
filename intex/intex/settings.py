@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-from os import getenv
 import os
 import django_heroku
 import dj_database_url 
@@ -47,7 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'homepage.apps.HomepageConfig',
     'prescribers.apps.PrescribersConfig',
-    'govpage.apps.GovpageConfig'
     'whitenoise.runserver_nostatic',
 ]
 
