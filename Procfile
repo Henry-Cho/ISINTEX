@@ -1,1 +1,1 @@
-web: gunicorn intex.wsgi
+web: gunicorn ISINTEX.wsgi
